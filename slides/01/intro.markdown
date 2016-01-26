@@ -53,7 +53,7 @@ This course is __a practical introduction__ to creating __modern web application
 * JavaScript
 * Server Side Programming 
 * Storing Data
-* Client Side _Build-Out_ (CSS)
+* Client Side _Build-Out_ (HTML and CSS)
 * Client Side Programming
 * A Few _Trendy_ Frameworks / Libraries 
 * Development Tools \*
@@ -91,13 +91,11 @@ This course is __a practical introduction__ to creating __modern web application
 * {:.fragment} HTTP
 * {:.fragment} Web Framework - __Express__
 * {:.fragment} Session Management
+* {:.fragment} Building and Consuming APIs
 * {:.fragment} Forms
 * {:.fragment} MVC
 * {:.fragment} Deployment
 
-{% comment %}
-* {:.fragment} Building and Consuming APIs
-{% endcomment %}
 <aside class="notes">
 * Request Methods / Response Codes?
 * What's MVC stand for? Examples?
@@ -123,10 +121,10 @@ This course is __a practical introduction__ to creating __modern web application
 <section markdown="block">
 ## Client Side _Build-Out_ 
 
-* {:.fragment} Quick Review - __HTML5/CSS3/DOM__
+* {:.fragment} Quick Review - __DOM/HTML5/CSS3__
 * {:.fragment} CSS Pre-processor / CSS Meta Language - Maybe __SASS__ ('cause it won)
-* {:.fragment} CSS Framework / Grid System - Maybe something simple, like __Skeleton__
-* {:.fragment} _Responsive_ Design / _Mobile First_
+* {:.fragment} Maybe... CSS Framework / Grid System - Maybe something simple, like __Skeleton__
+* {:.fragment} Maybe... _Responsive_ Design / _Mobile First_
 
 <aside class="notes">
 * know html? 
@@ -155,7 +153,7 @@ This course is __a practical introduction__ to creating __modern web application
 ## Development Tools
 
 * {:.fragment} Version Control - __Git__
-* {:.fragment} Task Runner - either __Grunt__ or __Gulp__
+* {:.fragment} Task Runner - one of these: __Grunt__, __Gulp__ ... or __webpack__?
 * {:.fragment} (Optionally) Debugger - __Node Debugger, Inspector__ and __Chrome Developer Tools__
 * {:.fragment} (Optionally) Linter - __JSHint/JSLint__
 
@@ -176,7 +174,7 @@ This course is __a practical introduction__ to creating __modern web application
 ### Joe Versoza
 
 * {:.fragment} __Clinical Assistant Professor__ (you can find me at: {{ site.office_hours_room }})
-* {:.fragment} in the recent past
+* {:.fragment} before teaching...
 	* part-time adjunct at __NYU__ and __City-Tech__
 	* IT Manager at non-profit (wrangling developers / herding cats) 
 
@@ -226,9 +224,9 @@ __If you've been following along, the specific tools, languages and frameworks w
 * [Express](http://expressjs.com/)
 * [MongoDB](http://www.mongodb.org/) (and Mongoose)
 * [Sass](http://sass-lang.com/) (pretty sure about this as Bootstrap switched over)
-* [Skeleton](http://getskeleton.com/) (probably)
+* [Skeleton](http://getskeleton.com/) (maybe)
 * [React](http://facebook.github.io/react/)
-* [Gulp](http://gulpjs.com/) (or maybe Grunt)
+* [Gulp](http://gulpjs.com/) (or maybe Grunt... or maybe webpack)
 * [Git](http://git-scm.com/)
 * etc.
 
@@ -242,7 +240,6 @@ __Why use JavaScript, Node.js and Express over Ruby and Ruby on Rails or Python 
 The concepts and theory remain roughly the same across all of these _technology stacks_, but here's why I chose what I did:
 
 1. {:.fragment} current _trend_ / experiencing growth (__JavaScript__ and __[Node.js](https://www.paypal-engineering.com/2013/11/22/node-js-at-paypal/)__ [seem](https://source.opennews.org/en-US/articles/nyt-redesigns-mobile/) [to](http://queue.acm.org/detail.cfm?id=2567673) [be](http://www.tiobe.com/index.php/content/paperinfo/tpci/index.html) [on](http://www.modulecounts.com/), [the](http://www.indeed.com/jobanalytics/jobtrends?q=Node.js%2C+rails%2C+PHP%2C+django&l=) [rise](http://www.indeed.com/jobtrends?q=Node.js%2C+rails%2C+PHP%2C+django&l=&relative=1))
-2. {:.fragment} ready for mobile (__skeleton__ is basically [responsive boilerplate](http://getskeleton.com/)
 3. {:.fragment} easy to install and cross platform (__Node.js__)
 4. {:.fragment} a single language, from front-end to back-end (__JavaScript__)
 5. {:.fragment} work with tools that are either currently or becoming industry standards (__git__, __grunt__, etc.)
@@ -258,20 +255,22 @@ The concepts and theory remain roughly the same across all of these _technology 
 	* already know this stuff
 	* think this may be too much work 
 	* not comfortable with requirements
-* {:.fragment}(There are some non major courses around as well)__
+* {:.fragment} __(There are some non major courses around as well)__
 	* __CSCI-UA.60__ Database Design & Web Implementation
 	* __CSCI-UA.61__ Web Development & Programming
 
 </section>
 
 <section markdown="block">
-## This is the Second Run of This Course
+## This is the Third Run of This Course
 
-* I ran this last fall, and the reception was pretty positive!
-* My favorite two comments were:
-	* "I think it was a great class but you should still start with server side stuff. And the __homeworks can be more challening__."
-	* "__The homework are too time-consuming__."
-* The course materials / structure is still a little rough, so I really appreciate your feedback as the class progresses
+* I ran this last fall and last semester, and the reception was pretty positive!
+* Some common themes throughout the comments were:
+    * {:.fragment} "__pace could have been slower- rushed through a lot of material in class too much hw assigned__"
+    * {:.fragment} "__General pace was good - could have maybe been a little faster.__"
+	* {:.fragment} "__... I like the idea of more front end stuff__."
+    * {:.fragment} "__Too much frontend stuff (react, etc), would prefer more backend stuff__"
+* {:.fragment} The course material is constantly evolving, so I really appreciate your feedback as the class progresses
 	* come see me during my [office hours](../../index.html)
 	* contact me at __jversoza__ at __cs__ dot __nyu__ dot __edu__
 * I'm __excited__ as you (hopefully) are __about exploring these technologies!__
@@ -347,8 +346,8 @@ Readings will be assigned in the required books.
 * __Required:__
 	* [{{ site.book_js }}]( {{ site.book_js_link }}) by {{ site.book_js_author }} (available [free, online]({{ site.book_js_link }}))
 	* [{{ site.book_web }}]( {{ site.book_web_link }}) by {{ site.book_web_author }}
-* __Optional:__
 	* [{{ site.book_js_2 }}]( {{ site.book_js_2_link }}) by {{ site.book_js_2_author }}
+* __Optional:__
 	* [{{ site.book_node }}]( {{ site.book_node_link }}) by {{ site.book_node_author }} (available [free, online]({{ site.book_node_link }}))
 </section>
 
@@ -375,4 +374,5 @@ sudo apt-get install npm</code></pre>
 * these slides were built with [reveal.js](http://revealjs.com/) for HTML/CSS slides
 	* use arrow keys to navigate
 	* (or click on arrow buttons)
+* add a <code>?print-pdf</code> to the end of the slide deck's url to see the [one page version of the slides](intro.html?print-pdf)
 </section>

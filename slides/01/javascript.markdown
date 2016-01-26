@@ -28,10 +28,11 @@ title: Introducing JavaScript
 	* [{{ site.book_js }}]({{ site.book_js_link }}) &rarr;
 		* great JavaScript / intro to programming book (may be too basic for some, though!)
 		* the [online version]({{ site.book_js_link }}) is free
-* __alternative/optional__
 	* [{{ site.book_js_2 }}]({{ site.book_js_2_link }}) &rarr;
 		* if you've seen JavaScript before / feel like you have this _programming thing_ down, this is for you
-	* [{{ site.book_js_2_author }}](http://en.wikipedia.org/wiki/Douglas_Crockford) is a well known figure in the JavaScript community (wrote [JSLint](http://www.jslint.com/), specified [JSON](http://en.wikipedia.org/wiki/JSON)(!))
+		* the [online version]({{ site.book_js_link }}) is also free
+	* [{{ site.book_web }}]({{ site.book_web_link }}) &rarr;
+        * more of a tutorial / how-to book...
 	
 </section>
 
@@ -103,9 +104,9 @@ Originally created in 1995 as a way to add interactivity (through programming) t
 ## A Quick Rundown of its Features
 
 * __multi paradigm__ - __Object Oriented__ (through prototypes), __Functional__, etc.
-* __dynamically typed__
-* __weakly typed__ (maybe not a great feature?)
-* most implementations are __interpreted__ rather than compiled
+* __dynamically typed__ (eh... maybe not a great feature?)
+* __weakly typed__ (also maybe not a great feature?)
+* most implementations are __interpreted__ rather than compiled (shrug)
 * __C-like syntax__ - so you should be pretty familiar with all of the curly braces
 </section>
 
@@ -117,10 +118,6 @@ Originally created in 1995 as a way to add interactivity (through programming) t
 * not only are you able to run JavaScript, but... if you have a web browser and a text editor, you will be able to write JavaScript programs as well!
 * __check out the JavaScript _console_ in Chrome__ &rarr;
 * In Chrome: View &rarr; Developer &rarr; JavaScript Console
-</section>
-
-<section markdown="block" data-background="#440000">
-##  (And Again) JavaScript is not Java!
 </section>
 
 <section markdown="block">
