@@ -1,0 +1,17 @@
+	<td markdown="block">
+* [Git Issues](slides/04/git-issues.html)
+* [Questions: Default Values, Splice, Console.log](slides/04/questions-default-splice-log.html)
+* [String and Array Methods Review](slides/04/string-array-methods.html)
+* [Objects Addendum](slides/04/objects-addendum.html)
+* [Higher Order Functions](slides/04/higher-order-functions.html) 
+* [Higher Order Functions Continued](slides/04/higher-order-functions-continued.html) 
+
+</td>
+	<td markdown="block">
+* [{{ site.book_js }}]({{ site.book_js_link }}) <br> Chapter 5 - Higher Order Functions
+</td>
+	<td markdown="block">
+Due September 22nd
+
+* [Homework #2](assignments.html#hw02)
+</td>

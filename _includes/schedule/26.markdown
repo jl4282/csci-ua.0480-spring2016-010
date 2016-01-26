@@ -1,0 +1,15 @@
+	<td markdown="block">
+* [React revisited](slides/26/react-webpack.html)
+* movie homework done with AJAX
+</td>
+	<td markdown="block">
+<!--
+* Chapter 
+* Chapter 
+-->
+</td>
+	<td markdown="block">
+<!--
+* [](assignments/.html)
+-->
+</td>

@@ -1,0 +1,25 @@
+	<td markdown="block">
+* [About Class #3](slides/03/meta.html)
+* [Functions (finish up hoisting, closures, arguments, etc.)](slides/03/functions-addendum.html)
+* [Node, NPM, and git](slides/03/node-npm-debug-git.html)
+* [Objects and Arrays](slides/03/objects.html)
+
+{% comment %}
+hoisting.markdown
+functions-addendum.markdown
+meta.markdown
+node-npm-debug-git.markdown
+objects-addendum.markdown
+objects.markdown
+review.markdown
+homework.markdown
+{% endcomment %}
+</td>
+	<td markdown="block">
+* [{{ site.book_js }}]({{ site.book_js_link }}) <br> Chapter 4 - Data Structures: Data Structures: Objects and Arrays
+</td>
+	<td markdown="block">
+<!--
+* [](assignments/.html)
+-->
+</td>

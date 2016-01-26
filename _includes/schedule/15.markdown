@@ -1,0 +1,27 @@
+	<td markdown="block">
+
+* [Routers, and Project/Directory Layout](slides/15/layout.html)
+* [Parameters from URLs](slides/15/params.html)
+* [Mongoose](slides/15/mongoose.html)
+* [Validation](slides/15/validation.html)
+
+{% comment %}
+* [Authentication](slides/15/auth.html)
+{% endcomment %}
+
+<!-- 
+* [](slides//.html)
+* [](slides//.html)
+-->
+</td>
+	<td markdown="block">
+<!--
+* Chapter 
+* Chapter 
+-->
+</td>
+	<td markdown="block">
+<!--
+* [](assignments/.html)
+-->
+</td>

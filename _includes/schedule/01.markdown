@@ -1,0 +1,21 @@
+	<td markdown="block">
+* [Intro](slides/01/intro.html)
+* [About JavaScript](slides/01/javascript.html)
+* [Values, Types, and Operators](slides/01/values-types-operators.html)
+* [Variables, Built-in Functions](slides/01/variables-control-structures.html)
+* [Control Structures](slides/01/conditionals-loops.html)
+* [Coercion (Revisited), Casting, Undefined, and Style](slides/02/coercion-casting-undefined.html)
+
+{% comment %}
+* [Functions](slides/02/functions.html)
+{% endcomment %}
+
+</td>
+	<td markdown="block">
+* [{{ site.book_js }}]({{ site.book_js_link }}) <br> Chapter 1 - Values, Types, and Operators
+* [{{ site.book_js }}]({{ site.book_js_link }}) <br> Chapter 2 - Program Structure
+* (optional) {{ site.book_js_2 }} <br> Chapter 2 - Grammar 
+</td>
+	<td markdown="block">
+* [Please install Node.js, K THX.](slides/01/intro.html#/24)
+</td>

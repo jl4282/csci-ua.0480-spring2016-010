@@ -1,0 +1,27 @@
+	<td markdown="block">
+
+* [Ajax Part 2](slides/21/ajax-express.html)
+* [CSS](slides/19/css.html)
+
+	{% comment %}
+* [Flexbox, Grids](slides/20/flexbox.html)
+* [SASS](slides/20/sass.html)
+)
+* [gulp](slides/20/gulp.html)
+	{% endcomment %}
+<!-- 
+* [](slides//.html)
+* [](slides//.html)
+-->
+</td>
+	<td markdown="block">
+<!--
+* Chapter 
+* Chapter 
+-->
+</td>
+	<td markdown="block">
+<!--
+* [](assignments/.html)
+-->
+</td>

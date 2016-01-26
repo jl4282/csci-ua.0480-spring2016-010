@@ -1,0 +1,21 @@
+	<td markdown="block">
+
+* (from forever ago) [CSS](slides/19/css.html)
+* [Deployment](slides/23/deployment.html)
+
+<!-- 
+* [](slides//.html)
+* [](slides//.html)
+-->
+</td>
+	<td markdown="block">
+<!--
+* Chapter 
+* Chapter 
+-->
+</td>
+	<td markdown="block">
+<!--
+* [](assignments/.html)
+-->
+</td>

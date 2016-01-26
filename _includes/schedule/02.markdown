@@ -1,0 +1,21 @@
+	<td markdown="block">
+* [About Class #2](slides/02/meta.html)
+* [Review](slides/02/review.html)
+* [And/Or, Checking for Special Values, Style](slides/02/and-or-nan-undefined.html)
+* [Functions](slides/02/functions.html)
+* [Hoisting](slides/02/hoisting.html)
+</td>
+	<td markdown="block">
+* [{{ site.book_js }}]({{ site.book_js_link }}) <br> Chapter 3 - Functions
+* [{{ site.book_js }}]({{ site.book_js_link }}) <br> Chapter 4 - Data Structures: Data Structures: Objects and Arrays
+</td>
+	<td markdown="block">
+Due Feb 4th
+
+* HW #1 (To be posted)
+
+{% comment %}
+* [Homework #1](assignments.html#hw01)
+{% endcomment %}
+
+</td>

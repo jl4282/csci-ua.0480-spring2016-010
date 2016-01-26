@@ -1,0 +1,31 @@
+	<td markdown="block">
+<!-- 
+* [](slides//.html)
+* [](slides//.html)
+-->
+
+Slides From Previous Class...
+
+* [HTML Primer, JavaScript and the Browser](slides/17/javascript-browser.html)
+* [The Document Object Model](slides/17/dom.html)
+* [DOM Continued](slides/17/dom-continued.html)
+
+And Today's Slides...
+
+* [Attributes](slides/18/attributes.html)
+
+__Final__ - ly ... Let's Discuss the Project
+
+* [Final Project](final-project.html)
+
+</td>
+	<td markdown="block">
+
+* {{site.book_js}} - Chapter 12 - JavaScript and the Browser
+* {{site.book_js}} - Chapter 13 - The Document Object Model
+* [HTML and CSS from shayhowe.com](http://learn.shayhowe.com/html-css/getting-to-know-html/)
+
+</td>
+	<td markdown="block">
+* [Final Project](final-project.html)
+</td>

@@ -1,0 +1,11 @@
+	<td markdown="block">
+* [About Class #5 and indexOf, timing, toFixed](slides/05/meta.html)
+* [Higher Order Functions Continued](slides/04/higher-order-functions-continued.html#/14) 
+* [How Does Require Work](slides/05/control-require.html)
+
+</td>
+	<td markdown="block">
+* [{{ site.book_js }}]({{ site.book_js_link }}) <br> Chapter 5 - Higher Order Functions
+</td>
+	<td markdown="block">
+</td>
