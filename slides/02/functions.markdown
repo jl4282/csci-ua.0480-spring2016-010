@@ -135,6 +135,7 @@ Variables declared at the "top level" of your program (outside of functions) and
 * __parameters__ in a function __are local__ to that function
 * variables declared __with__ the keyword, <code>var</code> are __local__ to the function
 * variables declared __without__ the keyword, <code>var</code> are __global__ / affect the global scope... ⊙﹏⊙
+    * (actually, the nearest enclosing scope - most of the time this is global, but it could be an outer function!)
 * global variables (again) are accessible throughout your program, even from within you function's body
 
 </section>

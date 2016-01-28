@@ -30,8 +30,8 @@ __Hoisting__ basically brings declarations to the __top of the current scope__. 
 {:.fragment}
 <div class="fragment" markdown="block">
 
-* declarations do not have to occur before they are used!
-* we already saw this with functions...
+* some declarations do not have to occur before they are used!
+* we already saw this with functions declarations...
 
 (btw, [this article](http://www.i-programmer.info/programming/javascript/5364-javascript-hoisting-explained.html?start=1) explained a lot, as well as [Chapter 4](http://eloquentjavascript.net/03_functions.html) in {{ site.book_js }})
 {:.fragment}
@@ -98,7 +98,7 @@ inner();
 </code></pre>
 {:.fragment}
 
-<code>ReferenceError</code> - function declarations are hoisted to the top of their __enclosing scope__ (not to the top of the global scope)
+<code>ReferenceError</code> - function declarations are hoisted to the top of their __current scope__ (not to the top of the global scope)
 {:.fragment}
 
 </section>
@@ -349,7 +349,7 @@ var f = function(x) {
 Variable hoisting.  __Why?__ &rarr;
 
 * generally a top-down approach is taken to programming
-	* so it may make sense for the "main" part of the program to on top, calling functions elsewhere
+	* so it may make sense for the "main" part of the program to go on top, calling functions elsewhere
 	* those functions are likely to be declared below main
 	* so it's more natural... ¯\\_(ツ)\_/¯ (maybe)
 * as for variables, I don't know if I can excuse that
