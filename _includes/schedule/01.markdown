@@ -4,7 +4,6 @@
 * [Values, Types, and Operators](slides/01/values-types-operators.html)
 * [Variables, Built-in Functions](slides/01/variables-control-structures.html)
 * [Control Structures](slides/01/conditionals-loops.html)
-* [Coercion (Revisited), Casting, Undefined, and Style](slides/02/coercion-casting-undefined.html)
 
 {% comment %}
 * [Functions](slides/02/functions.html)

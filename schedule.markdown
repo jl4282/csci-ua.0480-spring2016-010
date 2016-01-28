@@ -44,10 +44,7 @@ nav-state: schedule
 * Objects
 
 </td>
-{% comment %}
 {% include schedule/03.markdown %}
-{% endcomment %}
-<td></td><td></td><td></td>
 </tr>
 
 

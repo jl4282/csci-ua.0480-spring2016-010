@@ -76,6 +76,7 @@ goodbye
 {:.fragment}
 
 This actually comes in handy for checking if a property exists on an object, and defaulting to a specific value if it doesn't:
+{:.fragment}
 
 <pre><code data-trim contenteditable>
 // we haven't seen objects yet, but you get the idea
@@ -83,8 +84,10 @@ var obj = {prop1: "a value"};
 obj.prop1 || "default value"
 obj.prop2 || "default value"
 </code></pre>
+{:.fragment}
 </section>
 
+{% comment %}
 <section markdown="block">
 ## null and undefined
 
@@ -170,3 +173,4 @@ if (some_boolean_expression) { // <-- curly brace here!
 * to __check for undefined__: <code>if(typeof myVar == 'undefined')</code>
 * to __check for NaN__: <code>isNan(myVar)</code>
 </section>
+{% endcomment %}

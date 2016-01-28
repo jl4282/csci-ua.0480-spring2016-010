@@ -29,9 +29,8 @@ title: "About Class #2"
 
 * check out the [schedule](../../schedule.html)
 * we're doing about 3 weeks of JavaScript
-* last week, we covered a bunch of super basic stuff (a bit of a drag, I know)
+* last class, we covered a bunch of super basic stuff (a bit of a drag, I know)
 * this week, we're starting some of the _fun stuff_ - like functional and object oriented programming
-
 </section>
 
 
@@ -72,19 +71,19 @@ You'll have some time to learn this, as we won't need any front-end development 
 </section>
 
 <section markdown="block">
-## First Homework is Up
+## First Homework 
 
-[Homework #1](../../assignments.html#hw01) will help you get familiar with JavaScript syntax.
+Homework #1 will be posted Friday evening. It'll help you get familiar with JavaScript syntax.
 
-* __create a github account with your nyu net id__ 
-	* (it may make sense to keep this separate from your _actual_ github account)
-	* (all of your assignments will be private)
-* try a few exercises from {{ site.book_js }}
-* blackjack (yeah, you've probably done this before)
-	* using the  _synchronous_ prompt library to simulate a browser prompt. (__you know, browser prompt__)
-	* (note that node.js programs would usually use a different prompt library that's asynchronous) 
-	* my implementation isn't that long (just over 100 LOC)
-* should be completely posted by this afternoon
+* __create a github account if you don't already have one__
+* __send me your github username and your NYU NetID__ using [this form](https://docs.google.com/a/nyu.edu/forms/d/1mgHQ2NupHDAlirAcbYjeSShFeAWNyPH1sqCqa7zTe2M/viewform)
+    * actually... let's just do it now!
+    * if you don't have a laptop, do it from your phone or do it immediately when you get home
+* (all of your assignments will be private)
+* the assignment will likely be...
+    * a few exercises from {{ site.book_js }}
+    * threes dice game... or maybe blackjack (yeah, you've probably done this before)
+    * using some sort of input library
 </section>
 
 
@@ -93,7 +92,8 @@ You'll have some time to learn this, as we won't need any front-end development 
 
 ### Again, the topics we'll check out today are:
 
-* a short review with a quick exercise
+* go over the slides we missed from the last class
+    * you can check out the short review / quick exercise on your own
 * using <code>and</code> and <code>or</code>
 * checking for <code>NaN<code> and <code>undefined</code> 
 * functions

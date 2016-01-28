@@ -1,7 +1,8 @@
 	<td markdown="block">
 * [About Class #2](slides/02/meta.html)
 * [Review](slides/02/review.html)
-* [And/Or, Checking for Special Values, Style](slides/02/and-or-nan-undefined.html)
+* [Coercion (Revisited), Casting, Undefined, and Style](slides/02/coercion-casting-undefined.html)
+* [And/Or](slides/02/and-or-nan-undefined.html)
 * [Functions](slides/02/functions.html)
 * [Hoisting](slides/02/hoisting.html)
 </td>
@@ -10,9 +11,14 @@
 * [{{ site.book_js }}]({{ site.book_js_link }}) <br> Chapter 4 - Data Structures: Data Structures: Objects and Arrays
 </td>
 	<td markdown="block">
+
+Due now / today!
+
+* [Send me your github username](https://docs.google.com/a/nyu.edu/forms/d/1mgHQ2NupHDAlirAcbYjeSShFeAWNyPH1sqCqa7zTe2M/viewform)
+
 Due Feb 4th
 
-* HW #1 (To be posted)
+* HW #1 (To be posted Friday afternoon)
 
 {% comment %}
 * [Homework #1](assignments.html#hw01)
