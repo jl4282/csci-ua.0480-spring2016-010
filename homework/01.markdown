@@ -59,10 +59,9 @@ Ensure that you have the following tools installed:
 
 * use this [form to send me your github username](https://docs.google.com/a/nyu.edu/forms/d/1mgHQ2NupHDAlirAcbYjeSShFeAWNyPH1sqCqa7zTe2M/viewform)
 * wait for a notification that states that you've been added to the class's github _organization_
+* I'll create a repository for you (I'll create all of the repositories on Monday)
 * ...then go to the [class github page](https://github.com/nyu-csci-ua-0480-010-spring-2016)
 * find the repository that starts with either your NYU NetID or your github name, and ends with homework01 (for example, jjv222-homework01) 
-* keep note of the __URL__ of your repository (there's a text box in the middle of the page under __Quick setup — if you’ve done this kind of thing before__)
-* this is the repository url... you'll use this when you add your remote repository
 * use the url in the right-hand bar, under HTTPS clone URL to __clone__ the homework ... using the commandline client, that would be (with GITHUB_REPOSITORY_URL being the url you copied from the right hand bar):
 <pre><code data-trim contenteditable> git clone GITHUB_REPOSITORY_URL
 </code></pre>
