@@ -16,12 +16,11 @@ Due now / today!
 
 * [Send me your github username](https://docs.google.com/a/nyu.edu/forms/d/1mgHQ2NupHDAlirAcbYjeSShFeAWNyPH1sqCqa7zTe2M/viewform)
 
-Due Feb 4th
+Due Feb 5th
 
-* HW #1 (To be posted Friday afternoon)
+* [Homework #1](homework/01.html)
 
 {% comment %}
-* [Homework #1](assignments.html#hw01)
 {% endcomment %}
 
 </td>

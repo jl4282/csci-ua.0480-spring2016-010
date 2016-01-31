@@ -7,7 +7,7 @@ title: CSCI-UA.0480 - Homework #1
 	<div class="panel-heading">Homework #1</div>
 	<div class="panel-body" markdown="block">
 
-# Blackjack, __Due Sept 15th__, by 11PM
+# Blackjack, __Due Feb 5th, by 11PM__
 
 ## Overview
 
@@ -17,14 +17,14 @@ __There are multiple parts to this homework:__
 
 __Part 1__ - exercises from the book
 
-Try doing a couple of exercises from Chapter 4 in our book, {{ site.book_js }}.
+A selection of exercises from Chapter 4 in our book, {{ site.book_js }}.
 
 * A variation of "The sum of a range" exercise - create a function called range that emulates Python's range function... which you'll use with your own implementation of sum in order to calculate the sum of a range of numbers
 * "A list" - create functions that construct and manipulate a linked list (this should be familiar to you)
 
 __Part 2__ and __Part 3__ - blackjack
 
-Create a commandline player Blackjack game with 2 players - the user and the computer. 
+Create a commandline Blackjack game with 2 players - the user and the computer. 
 
 * each player is dealt 2 cards from a 52 card deck, with each card representing some numeric value
 * each player can choose to be dealt more cards ("hit") or stop being dealt cards ("stand") 
@@ -37,17 +37,12 @@ See the [sample output](#hw01-sample) at the end of these instructions.
 
 ### Submission Process
 
-The final version of your assignment should be in GitHub, but a submission should still be sent via NYU Classes.
+The final version of your assignment should be in GitHub.
 
 * __push__ your changes to the homework repository on GitHub
-* add the URL of the repository to your assignment submission in NYU Classes
-
-Regarding the Due Date
-
-* although code is in GitHub, date of submission in NYU Classes will be used to determine late/not late (see submission process below)
-* commits later than that date will be handled on a case-by-case basis
-* 24 hour grace period where NYU Classes is still open
-* after that, no late homeworks will be accepted
+* there is a 24 hour grace period where you can still commit and push changes
+* all code will be cloned 24 hours after the due date
+* after that, no further commits are accepted
 
 
 ## Preparation
@@ -62,18 +57,15 @@ Ensure that you have the following tools installed:
 
 ### (4 points) Use Git
 
-* __send me your github username__ (email me at _jversoza at cs dot nyu dot edu_ with subject "CSCI-UA.0480-001 GitHub Username" ... or contact me via NYU classes)
+* use this [form to send me your github username](https://docs.google.com/a/nyu.edu/forms/d/1mgHQ2NupHDAlirAcbYjeSShFeAWNyPH1sqCqa7zTe2M/viewform)
 * wait for a notification that states that you've been added to the class's github _organization_
-* ...then go to the [class github page](https://github.com/nyu-csci-ua-0480-002-fall-2015)
+* ...then go to the [class github page](https://github.com/nyu-csci-ua-0480-010-spring-2016)
 * find the repository that starts with either your NYU NetID or your github name, and ends with homework01 (for example, jjv222-homework01) 
 * keep note of the __URL__ of your repository (there's a text box in the middle of the page under __Quick setup — if you’ve done this kind of thing before__)
 * this is the repository url... you'll use this when you add your remote repository
-* in your project directory, <code>git init</code>... (which creates a local repository)
-{% comment %}
 * use the url in the right-hand bar, under HTTPS clone URL to __clone__ the homework ... using the commandline client, that would be (with GITHUB_REPOSITORY_URL being the url you copied from the right hand bar):
 <pre><code data-trim contenteditable> git clone GITHUB_REPOSITORY_URL
 </code></pre>
-{% endcomment %}
 * create a file called <code>.gitignore</code> in the same directory
 * add the following line to the file so that git ignores any locally installed node modules: <code> node_modules </code>
 * in the same project directory, run <code>git add README.md</code> to let git know that we're ready to "save"
@@ -84,10 +76,6 @@ Ensure that you have the following tools installed:
 ### (1 points) Download a Module Using npm, Start Your Actual Code
 
 For parts 2 and 3, you'll need a module to help you ask the user for input. 
-
-* Note that __previous versions__ of the homework instructions specify <code>sync-prompt</code> as the library to use. 
-* A student informed me that this module did not work on their machine... so as an alternative, use <code>readline-sync</code> below. 
-* (If <code>sync-prompt</code> works for you, feel free to use it... as it's compatible with older versions of node).
 
 Installing a module:
 
@@ -124,7 +112,7 @@ To run your programs, use the commandline (Terminal.app, DOS, etc.):
 
 ### (10 points) range.js
 
-In a file called __range.js__, implement a function called <code>range</code>. It should behave like Python's range function in that the number of arguments it receives to determines how it works. <code>range</code> will produce an <code>Array</code> of <code>Numbers</code> based on the arguments passed into it.
+In the file called __range.js__, implement a function called <code>range</code>. It should behave like Python's range function in that the number of arguments it receives determines how it works. <code>range</code> will produce an <code>Array</code> of <code>Numbers</code> based on the arguments passed into it.
 
 * with one argument, it'll give back a range of numbers starting with 0 and going up to, but not including the <code>Number</code> specified by the argument, by 1's
 	* <code>range(3); // &rarr; [0, 1, 2]</code>
@@ -136,10 +124,9 @@ In a file called __range.js__, implement a function called <code>range</code>. I
 * if a range is not possible (for example, start is less than stop, but step is negative), give back an empty <code>Array</code>
 	* <code>range(1, 3, -1); // &rarr; []</code>
 
-When you're done, try using your function with this code to test if it works correctly
+Once you have a working implementation, add the code below to the end of your file to test if everything works correctly:
 
-<pre><code data-trim contenteditable>
-console.log(range(5));
+<pre><code data-trim contenteditable>console.log(range(5));
 console.log(range(2, 5));
 console.log(range(2, 9, 2));
 console.log(range(5, 0, -1));
@@ -147,10 +134,9 @@ console.log(range(6, -1, -2));
 console.log(range(6, -1, 1));
 </code></pre>
 
-The output should look like:
+The output should look like this:
 
-<pre><code data-trim contenteditable>
-[ 0, 1, 2, 3, 4 ]
+<pre><code data-trim contenteditable>[ 0, 1, 2, 3, 4 ]
 [ 2, 3, 4 ]
 [ 2, 4, 6, 8 ]
 [ 5, 4, 3, 2, 1 ]
@@ -164,8 +150,7 @@ Hint: dealing with the optional arguments and positional arguments with differen
 * using the built-in <code>arguments</code> object within your function
 * note that reassigning new values to parameters actually modifies the <code>arguments</code> object:
 
-<pre><code data-trim contenteditable>
-// notice the value of arguments before reassignment
+<pre><code data-trim contenteditable>// notice the value of arguments before reassignment
 // of parameters
 function f(a, b) {
   console.log(arguments);
@@ -177,8 +162,7 @@ function f(a, b) {
 // both versions result in arguments being modified
 </code></pre>
 
-<pre><code data-trim contenteditable>
-// output from above
+<pre><code data-trim contenteditable>// output from above
 { '0': 2, '1': 3 }
 { '0': 5, '1': 10 }
 </code></pre>
@@ -187,15 +171,54 @@ __Use git to add, commit and push your changes when you're finished with range!_
 
 ### (10 points) linkedList.js
 
-In a file called __linkedList.js__, implement the functions specified in Exercise 3, "A list", from {{ site.book_js }}
+In the file called __linkedList.js__, implement the functions specified in Exercise 3, "A list", from {{ site.book_js }}
 
 Writing a recursive solution for the function, <code>nth</code>, is __optional__ (it's fun, so you __should__ do it, though!).
+
+Test your code using the example output from the book. Add the following to the end of your file:
+
+<pre><code data-trim contenteditable>console.log(arrayToList([10, 20]));
+console.log(listToArray(arrayToList([10, 20, 30])));
+console.log(prepend(10, prepend(20, null)));
+console.log(nth(arrayToList([10, 20, 30]), 1));
+</code></pre>
+
+The output should look like this:
+
+<pre><code data-trim contenteditable>{value: 10, rest: {value: 20, rest: null}}
+[10, 20, 30]
+{value: 10, rest: {value: 20, rest: null}}
+20
+</code></pre>
 
 __Use git to add, commit and push your changes when you're finished with your linked list implementation!__
 
 ## Part 2 - blackjack functions
 
-In order to write the blackjack program, we can break down the game into several functions:
+In order to write the blackjack program, we can break down the game into several functions... and place these functions into another file that will be used by your actual blackjack game. In the file called __cardUtils.js__, implement the following functions, __exactly as specified__ (take care of making sure the function names, parameters, parameter names and return values are all accurate).
+
+To create a __module__ (a file with JavaScript in it that can be used by another JavaScript program), read [the introduction to modules in the node.js documentation](https://nodejs.org/api/modules.html#modules_modules). Your module should _export_ the function you create so that you can use <code>require</code> in your blackjack game.
+
+In <code>cardUtils.js</code>, create your functions and add them to the _built-in_ exports object. For example:
+
+<pre><code data-trim contenteditable>function determineWinner(num1, num2) {
+    // your code here...
+}
+
+exports.determineWinner = determineWinner
+
+// OR
+
+exports.determineWinner = function(num1, num2) {
+    // your code here...
+}
+</code></pre>
+
+In <code>game.js</code>, you can use the functions that you've created in <code>cardUtils.js</code>. bring in your functions and use them by first __requiring your module__ and using the variable that you assign the <code>require</code> to as a way of accessing the functions defined in the module:
+
+<pre><code data-trim contenteditable>var cardUtils = require('./cardUtils');
+var winner = cardUtils.determineWinner(20, 15);
+</code></pre>
 
 ### (5 points) generateCards()
 
@@ -285,8 +308,7 @@ In order to write the blackjack program, we can break down the game into several
 ## Example Output
 
 
-<pre><code>
-Your hand is: 7♥ K♥ ... for a total of 17
+<pre><code>Your hand is: 7♥ K♥ ... for a total of 17
 (h)it or (s)tay
 > s
 Your hand: 7♥ K♥ (17), Computer hand: K♦ Q♦ (20)
