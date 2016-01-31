@@ -40,9 +40,8 @@ See the [sample output](#hw01-sample) at the end of these instructions.
 The final version of your assignment should be in GitHub.
 
 * __push__ your changes to the homework repository on GitHub
-* there is a 24 hour grace period where you can still commit and push changes
-* all code will be cloned 24 hours after the due date
-* after that, no further commits are accepted
+* all repositories will be cloned on the due date 
+* consequently, after that, no further commits will be seen by the graders (even if you continue to commit your work)
 
 
 ## Preparation
@@ -61,8 +60,8 @@ Ensure that you have the following tools installed:
 * wait for a notification that states that you've been added to the class's github _organization_
 * I'll create a repository for you (I'll create all of the repositories on Monday)
 * ...then go to the [class github page](https://github.com/nyu-csci-ua-0480-010-spring-2016)
-* find the repository that starts with either your NYU NetID or your github name, and ends with homework01 (for example, jjv222-homework01) 
-* use the url in the right-hand bar, under HTTPS clone URL to __clone__ the homework ... using the commandline client, that would be (with GITHUB_REPOSITORY_URL being the url you copied from the right hand bar):
+* find the repository that starts with your NYU NetID and ends with homework01 (for example, jjv222-homework01) 
+* on the repository's page, use the url in the right-hand bar, under HTTPS clone URL to __clone__ the homework ... using the commandline client, that would be (with GITHUB_REPOSITORY_URL being the url you copied from the right hand bar):
 <pre><code data-trim contenteditable> git clone GITHUB_REPOSITORY_URL
 </code></pre>
 * create a file called <code>.gitignore</code> in the same directory
@@ -234,9 +233,9 @@ var winner = cardUtils.determineWinner(20, 15);
 
 ### (10 points) shuffle(Array)
 
-* __parameters__: an array of card objects (see return value of) <code>generateCards</code>
-* __return__: a randomly ordered array objects, with each object representing a card
-* __description__: shuffle the array of cards passed in as an argument and return shuffled cards
+* __parameters__: an Array of card objects (see return value of) <code>generateCards</code>
+* __return__: a randomly ordered Array of objects, with each object representing a card
+* __description__: shuffle the Array of cards passed in as an argument and return shuffled cards
 	* use a shuffling algorithm to rearrange the order of the array of cards passed in
 	* some approaches include:
 		* algorithm 1:
@@ -285,8 +284,27 @@ var winner = cardUtils.determineWinner(20, 15);
 
 ### (15 points) Use the above functions to create an interactive commandline game. 
 
-* continually "deal" 2 cards to the computer and the player (remove the from the shuffled deck, add them to the players' hands)
-* do this as long as the number of cards in the shuffled deck is greater than or equal to half of the original deck (26)
+* create a deck of cards...
+    * to facilitate testing, allow the deck of cards to be specified by commandline arguments 
+    * that is, the deck of cards will either be created and shuffled, or your program will accept commandline arguments to specify the deck (without shuffling!)
+    * do this by accepting commandline arguments; in node, the first parameter passed in shows up as the 3rd element in and <code>Array</code> called <code>process.argv</code>
+    * the commandline argument passed in will be a string representing JavaScript object literal (JSON), that can be parsed into an <code>Array</code> of card <code>Objects</code> using the built-in function, <code>JSON.parse</code>
+    * TL;DR/show me the code!
+        <pre><code data-trim contenteditable>// assuming cards will hold your deck... 
+var cards;
+// your code could look something like this...
+// if there's a commandline argument
+if(process.argv[2]) {
+    // set the deck equal to the deck passed in
+    cards = JSON.parse(process.argv[2]) 
+} else {
+    // otherwise generate a deck and shuffle it
+    cards = shuffle(generateCards());
+}
+    // if your entire game is in a function, make sure the function has parameter for a deck to be specified rather than generated</code></pre>
+    * for example, to run with a specific deck (with ellipses representing more cards):
+        <pre><code data-trim contenteditable>node app.js "[{\"suit\":\"spade\", \"face\":\"A\"}, {\"suit\":\"heart\", \"face\":3}, ... {\"suit\":\"diamond\", \"face\":9}]</code></pre>
+* "deal" 2 cards to the computer and the player (remove the from the shuffled deck, add them to the players' hands)
 	* when the hands are dealt...
 	* continually ask the player if they want to (h)it or (s)tand 
 	* use <code>question</code> to collect the player's command - <code>h</code> or <code>s</code>
@@ -298,8 +316,10 @@ var winner = cardUtils.determineWinner(20, 15);
 		* the computer will continually "hit" as long as the total of its cards are less than 17
 		* once the computer has gone over 17, stop
 	* compare the computer and player hand totals
-	* determine the winner
+	* determine the winner of the current _hand_
 	* see the example output below as a sample implementation
+* once someone wins a hand, start a new hand by dealing again
+* do this as long as the number of cards in the shuffled deck is greater than or equal to half of the original deck (26)
 
 
 <a name="hw01-sample"></a>
