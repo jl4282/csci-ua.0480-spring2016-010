@@ -303,7 +303,7 @@ if(process.argv[2]) {
 }
     // if your entire game is in a function, make sure the function has parameter for a deck to be specified rather than generated</code></pre>
     * for example, to run with a specific deck (with ellipses representing more cards):
-        <pre><code data-trim contenteditable>node app.js "[{\"suit\":\"spade\", \"face\":\"A\"}, {\"suit\":\"heart\", \"face\":3}, ... {\"suit\":\"diamond\", \"face\":9}]</code></pre>
+        <pre><code data-trim contenteditable>node app.js "[{\"suit\":\"spade\", \"face\":\"A\"}, {\"suit\":\"heart\", \"face\":3}, ... {\"suit\":\"diamond\", \"face\":9}]"</code></pre>
 * "deal" 2 cards to the computer and the player (remove the from the shuffled deck, add them to the players' hands)
 	* when the hands are dealt...
 	* continually ask the player if they want to (h)it or (s)tand 
