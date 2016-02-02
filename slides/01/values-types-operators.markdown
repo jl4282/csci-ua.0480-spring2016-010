@@ -62,8 +62,6 @@ undefined
 <section markdown="block">
 ## Types of Values
 
-So, there are 6 basic types in JavaScript...
-
 __Based on the values in the previous slides, guess what types JavaScript supports?__ &rarr;
 
 1. number
@@ -74,6 +72,9 @@ __Based on the values in the previous slides, guess what types JavaScript suppor
 6. undefined 
 {:.fragment}
 
+<br>
+Actually... these are the types that the <code>typeof</code> operator returns... __the specs specify something different__ (we'll see in a minute)
+{:.fragment}
 </section>
 
 <section markdown="block">
@@ -99,6 +100,41 @@ We'll be using <code>typeof</code> extensively for the next few slides....
 {:.fragment}
 </section>
 
+<section markdown="block">
+## BTW... Types According to the Specification
+
+[The ECMAScript 5 specifications list 6 types, but they're not the ones that typeof returns](http://www.ecma-international.org/ecma-262/5.1/#sec-8) (of course!)
+
+* <code>Undefined</code>
+* <code>Null</code>
+* <code>Boolean</code>
+* <code>String</code>
+* <code>Number</code>
+* <code>Object</code>
+
+<br>
+Wait... what? Then what's <code>typeof</code> doing?
+
+</section>
+
+
+<section markdown="block">
+## What Does tyepof Do?
+
+Weelllll.... it behaves [exactly according to what's specified](http://www.ecma-international.org/ecma-262/5.1/#sec-11.4.3):
+
+* <code>typeof undefined  &rarr; "undefined"</code>
+* <code>typeof null  &rarr; "object"</code> ???
+* <code>typeof false  &rarr; "boolean"</code>
+* <code>typeof 5  &rarr; "number"</code>
+* <code>typeof 'foo'  &rarr; "string"</code>
+* <code>typeof console.log  &rarr; "function"</code>
+* <code>typeof [1, 2, 3, 4]  &rarr; "object"</code> ???
+
+<br>
+Seems like <code>null</code> is an object (!? ... [a mistake?](http://javascript.crockford.com/survey.html)). <code>Array</code> is also listed as a generic object. ¯\\_(ツ)_/¯.
+
+</section>
 <section markdown="block">
 ## Numbers
 

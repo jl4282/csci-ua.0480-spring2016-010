@@ -54,10 +54,7 @@ nav-state: schedule
 * Higher Order Functions
 
 </td>
-{% comment %}
 {% include schedule/04.markdown %}
-{% endcomment %}
-<td></td><td></td><td></td>
 </tr>
 
 

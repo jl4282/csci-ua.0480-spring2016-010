@@ -1,21 +1,19 @@
 var isBalanced = function(s) {
-    var parentheses = s.split(''),
-        stack = [],
-        OPEN_PARENS = '(',
-        CLOSE_PARENS = ')',
-        balanced = true;
+    var stack = [], balanced = true;
 
-    parentheses.every(function(ele, i) {
-        if (ele === OPEN_PARENS) {
-            stack.push(ele);
-        } else if (ele === CLOSE_PARENS) {
+    for(var i = 0; i < s.length; i++) {
+        var ch = s.charAt(i);    
+        if (ch === '(') {
+            stack.push(ch);
+        } else if (ch === ')') {
             if (stack.length === 0) {
                 balanced = false;
-                return false;
-            } // oops!
+                break;
+            } 
+            stack.pop();
+            return balanced;
         }
-        return true;
-    });
+    }
 
     if (stack.length !== 0) {
         balanced = false;
@@ -24,8 +22,8 @@ var isBalanced = function(s) {
     return balanced;
 };
 
-// should be true, then false
-["()", "(()))("].forEach(function(parens, i) {
-	var result = isBalanced(parens);
-	console.log(result);
-});
+console.log(isBalanced('()'));
+console.log(isBalanced(')('));
+console.log(isBalanced('()()'));
+console.log(isBalanced('()())'));
+

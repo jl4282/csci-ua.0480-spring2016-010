@@ -1,7 +1,5 @@
 	<td markdown="block">
-{% comment %}
 * [About Class #3](slides/03/meta.html)
-{% endcomment %}
 * [Functions (finish up hoisting, closures, arguments, etc.)](slides/03/functions-addendum.html)
 * [Node, NPM, and git](slides/03/node-npm-debug-git.html)
 * [Objects and Arrays](slides/03/objects.html)

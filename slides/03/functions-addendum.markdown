@@ -13,7 +13,7 @@ title: Functions (Closures, Optional Arguments)
 <section markdown="block">
 ## Topics
 
-* Review hoisting (and clarification)
+* Review hoisting
 * Optional Arguments
 * Closures
 
@@ -128,12 +128,13 @@ when using function declaration syntax, both declaration and _actual definition_
 </section>
 
 <section markdown="block">
-## A Clarification on var 
+## About var 
 
+A quick summary on __using var__ &rarr;
 
 * if you drop var, the declaration is not hoisted
 * if you're in a function then var will create a local variable
-* within a function, but without var, the interpreter will look up the scope chain until it finds that variable or hits the global scope (at which point it will create it)
+* within a function, but without var, __the interpreter will look up the scope chain until it finds that variable or hits the global scope (at which point it will create it)__
 </section>
 
 <section markdown="block">

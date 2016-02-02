@@ -23,21 +23,31 @@ title: Objects
 * Detecting Properties
 * Looping Over Objects
 </section>
+<section markdown="block">
+## Types (Again) According to the Specification
+
+[The ECMAScript 5 specifications list 6 types, but they're not the ones that typeof returns](http://www.ecma-international.org/ecma-262/5.1/#sec-8) (of course!):
+
+* <code>Undefined</code>
+* <code>Null</code>
+* <code>Boolean</code>
+* <code>String</code>
+* <code>Number</code>
+* <code>Object</code>
+
+</section>
 
 <section markdown="block">
-## Types So Far
+## Ok... So What About typeof?
 
-__What are the six types that we've learned so far?__ &rarr;
-
-(sort of in order of how we've seen them)...
+1. number
+2. string
+3. boolean
+4. object
+5. function
+6. undefined 
 {:.fragment}
 
-* {:.fragment} <code>number</code>
-* {:.fragment} <code>string</code>
-* {:.fragment} <code>boolean</code>
-* {:.fragment} <code>undefined</code>
-* {:.fragment} <code>function</code>
-* {:.fragment} <code>object</code>
 </section>
 
 <section markdown="block">
@@ -67,10 +77,10 @@ __Can anyone think of analogous types in other languages?__ &rarr;
 <section markdown="block">
 ## Creating Objects
 
-Here's an example of an object (scroll over to see the whole thing):
+Here's an example of an object:
 
 <pre><code data-trim contenteditable>
-var course = {name:'Applied Internet Technology', section:2, undergraduate:true};
+var course = {name:'AIT', section:10, undergraduate:true};
 </code></pre>
 
 __Object literals__ consist of:
@@ -198,7 +208,7 @@ console.log("here's one!")
 
 * __split([separator][, limit])__ - splits a String object into an array of strings by separating the string into substrings - default is one element of original string if no separator is specified. &rarr;
 * __toUpperCase()__ and __toLowerCase__ - um... self explanatory? &rarr;
-* __slice(beginSlice[, endSlice])__ - extracts a section of a string and returns a new string starting at index, beginSlice, and going to end of string or endSlice
+* __slice(beginSlice[, endSlice])__ - extracts a section of a string and returns a new string starting at index, beginSlice, and going to end of string or up to, but not including endSlice
 * __replace(regexp\|substr, newSubStr\|function[, flags])__ - returns a new string with some or all matches of a pattern replaced by a replacement (both substrings and regexes work) &rarr;
 </section>
 
@@ -210,8 +220,8 @@ console.log("here's one!")
 * __pop()__ - removes the last element from an array and returns that element
 * __push(element1, ..., elementN)__ - adds one or more elements to the end of an array and returns the new length of the array
 * __reverse()__ - reverses the order of the elements of an array — the first becomes the last, and the last becomes the first.
-* __sort([compareFunction])__ - sorts the elements of an array in place and returns the array
-* __splice(index, howMany[, element1[, ...[, elementN]]])__ - adds and/or removes elements from an array
+* __sort([compareFunction])__ - sorts the elements of an array in place and returns the array; compareFunction takes 2 arguments, a and b (return 1 if a > b, -1 for less than, 0 for equal)
+* __splice(index, howMany[, element1[, ...[, elementN]]])__ - removes and returns a section of an Array, replaces with values after 2nd argument
 </section>
 
 <section markdown="block">
@@ -425,7 +435,7 @@ However, as soon as you perform an _object-like_ operation on them, such as a me
 
 * __JavaScript creates an actual String, Number or Boolean object that wraps that primitive...__
 * and throws it away immediately, once the operations is done
-* this does mean, however, that __you can't create arbitrary properties on primitives
+* this does mean, however, that __you can't create arbitrary properties on primitives__
 
 <br>
 
