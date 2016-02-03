@@ -68,8 +68,12 @@ Ensure that you have the following tools installed:
 * add the following line to the file so that git ignores any locally installed node modules: <code> node_modules </code>
 * in the same project directory, run <code>git add README.md</code> to let git know that we're ready to "save"
 * save your work locally by running <code>git commit -m "first commit"</code>... everything within the quotes after <code>-m</code> is any commit message you'd like
+* finally, send your work to github by running <code>git push</code> (or <code>git push origin master</code>)
+
+{% comment %}
 * use <code>git remote add origin YOUR_REPOSITORY_URL_FROM_ABOVE</code> to let git know that github is your remote repository
 * finally, send your work to github by running <code>git push -u origin master</code>
+{% endcomment %}
 
 ### (1 points) Download a Module Using npm, Start Your Actual Code
 
@@ -212,7 +216,7 @@ exports.determineWinner = function(num1, num2) {
 }
 </code></pre>
 
-In <code>game.js</code>, you can use the functions that you've created in <code>cardUtils.js</code>. bring in your functions and use them by first __requiring your module__ and using the variable that you assign the <code>require</code> to as a way of accessing the functions defined in the module:
+In <code>app.js</code>, you can use the functions that you've created in <code>cardUtils.js</code>. bring in your functions and use them by first __requiring your module__ and using the variable that you assign the <code>require</code> to as a way of accessing the functions defined in the module:
 
 <pre><code data-trim contenteditable>var cardUtils = require('./cardUtils');
 var winner = cardUtils.determineWinner(20, 15);
