@@ -12,11 +12,75 @@ title: "Strings and Arrays"
 </section>
 
 <section markdown="block">
-## These Methods You Talk About Sound Intriguing 
+## Strings and Arrays
 
-### Let's take a look at some more methods!
+First... a quick note.
 
-* [Strings have a bunch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String#Methods_2 )
+* __Strings__ are primitives. They just _act_ like objects when they're called upon to do so
+    <pre><code data-trim contenteditable>
+var s = "I'm not really an object";
+s.message = "prove it!"
+console.log(s.message);
+</code></pre>
+* Uh turns out that <code>Arrays</code> are actually _just_ objects (they're not a separate type on their own)
+
+</section>
+
+<section markdown="block">
+## Strings
+
+__They're pretty unremarkable (whew!)__ &rarr;
+
+* just an ordered sequence of characters
+* they're __immutable__
+* a string literal can be constructed with single or double quotes: <code>'</code> or <code>"</code>
+* backslash escapes the next character (new line, tab, literal backslash, etc.)
+* the <code>.length</code> property contains the number of characters in a string
+* you can get a specific character by using the indexing operator: myString[0] ...
+* (negative indexes don't work, you'll have to use myString.length - 1 for the last index)
+
+</section>
+<section markdown="block">
+## Arrays
+
+<code>Arrays</code> though... __they're pretttttty weird__.  First... a few ways to make Arrays:
+
+* literal (square brackets with comma separated values): <code>[1, 2, 3]</code> 
+* you can index with brackets, and you can retrieve the number of elements using <code>.length</code>
+* an empty array is just open and close bracket: <code>[]</code>
+* you may see Arrays created with an <code>Array</code> constructor
+    * this should mostly be avoided
+    * (it behaves weirdly... 1 arg that's Number makes an <code>Array</code> of that length)
+    * (...anything else constructs an Array with those elements)
+    * <code>new Array(2) # [ , ,  ] !?!?!?!</code> 
+    * <code>new Array('abc') # ['abc'] oookaaaay<code> 
+    * <code>new Array(2, 4, 6) # [2, 4, 6] sure!<code> 
+
+
+</section>
+<section markdown="block">
+## Arrays are What?
+
+Also, <code>Arrays</code> are _actually just objects_. This means that their indexes are properties.
+
+* indexes don't have to be contiguous!?
+* you can have _holes_ in your arrays (length counts them as elements, though):
+    <pre><code data-trim contenteditable>
+var a = [];
+a[0] = 'ok'
+a[4] = 'where are the previous elements?'
+console.log(a);
+</code></pre>
+* generally, avoid doing this... behavior when working with <code>Array</code> holes varies depending on what you're doing!
+* [there's actually a section in the book devoted to this](http://speakingjs.com/es5/ch18.html#array_holes)
+
+</section>
+<section markdown="block">
+## String and Array Methods
+
+Strings are object like when you want them to be, and Arrays are secretly objects. __They both have a bunch of built-in methods.__ &rarr;
+
+* [Strings have a lot](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String#Methods_2 )
 * [Arrays do too](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Methods_of_array_instances)
 </section>
 
@@ -61,8 +125,177 @@ __These don't mutate the array that they're called on.__ &rarr;
 * [join([separator = ','])](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join) - joins all elements of an array into a string using separator (default is comma)
 * [forEach(callback[, thisArg])](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach) - calls a function for each element in the array
 * [every(callback[, thisArg])](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every) -  tests whether all elements in the array pass the test implemented by the provided function
+* [indexOf(searchElement[, fromIndex=0])](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf) - returns index of searchElement or -1 if not found
 </section>
 
+<section markdown="block">
+## Splice and Slice
+
+These methods may not be so intuitive, so __let's go over them in depth__. &rarr;
+
+</section>
+<section markdown="block">
+## Splice
+
+<code>splice</code> __removes elements__ (in place) from an Array, and __optionally inserts elements__.
+
+* 1st parameter, <code>start</code> specifies the index (inclusive) to start modifying the Array 
+	* negative indexes start from left
+	* indexes greater than last index is set to the last index
+* 2nd parameter, <code>deleteCount</code> specifies the number of elements to be deleted
+	* omitting this argument will cause all elements after <code>start</code> to be removed
+</section>
+
+<section markdown="block">
+## Splice Continued
+
+* __all arguments after the second parameter are elements that will be added to the original Array__
+	* these elements will be inserted at the <code>start</code> specified
+	* if there are no parameters after the second, <code>splice</code> will only remove elements
+* __returns the elements removed as an Array__
+</section>
+
+<section markdown="block">
+## TL;DR
+
+* <code>splice</code> removes elements from an existing Array
+* it optionally replaces those elements with _other_ elements
+* it gives back the elements that were removed as an Array
+
+</section>
+<section markdown="block">
+## Splice Examples
+
+Using the following code, <code>a = [2, 4, 6, 8, 10, 12]</code>,  __what is the new content of a... and what is returned... after calling splice (assume a is reset each time)?__ &rarr;
+
+<pre><code data-trim contenteditable>
+a.splice(2);
+a.splice(2, 2);
+a.splice(-2);
+a.splice(2, 2, 1, 1);
+</code></pre>
+
+<pre><code data-trim contenteditable>
+returned: [ 6, 8, 10, 12 ], a: [ 2, 4 ]
+returned: [ 6, 8 ],         a: [ 2, 4, 10, 12 ]
+returned: [ 10, 12 ],       a: [ 2, 4, 6, 8 ]
+returned: [ 6, 8 ],         a: [ 2, 4, 1, 1, 10, 12 ]
+</code></pre>
+{:.fragment}
+
+</section>
+
+<section markdown="block">
+## Ok, How is Slice Different from Splice? 
+
+They sound the same! __They do different stuff though!__ ... totally different stuff.
+
+Think of <code>slice</code> as a way of copying a sub-Array from an existing an Array.
+
+* parameter 1, <code>begin</code>, is the start index (inclusive) of the sub-Array to be copied out
+	* begins at index 0 if it is not specified
+	* negative starts from end
+* parameter 2, <code>end</code>, is the end of the sub-Array (exclusive ... so goes up to, but does not include)
+	* ends at last index if not specified
+	* negative starts from end
+* think slices in Python lists
+* __it does not alter the original Array__
+
+</section>
+
+<section markdown="block">
+## Slice Examples
+
+__What is the output of the following code?__ &rarr;
+
+<pre><code data-trim contenteditable>
+a = [2, 4, 6, 8];
+console.log(a.slice());
+console.log(a.slice(1));
+console.log(a.slice(1, 3));
+console.log(a.slice(-1));
+console.log(a);
+</code></pre>
+
+<pre><code data-trim contenteditable>
+[ 2, 4, 6, 8 ]
+[ 4, 6, 8 ]
+[ 4, 6 ]
+[ 8 ]
+[ 2, 4, 6, 8 ]
+</code></pre>
+{:.fragment}
+
+</section>
+
+<section markdown="block">
+## Arrays and Mutability
+
+__What's the output of this code?__ &rarr;
+
+<pre><code data-trim contenteditable>
+a = [1, 2, 3];
+b = a;
+a.push(4);
+console.log(b);
+</code></pre>
+
+<code>[1, 2, 3, 4]</code>
+{:.fragment}
+
+Remember... <code>Arrays</code> are just objects anyway (so, yeah, they're mutable).
+{:.fragment}
+
+</section>
+
+<section markdown="block">
+## Using Slice to Copy 
+
+__A common way of duplicating an Array is to use slice.__ &rarr;
+
+<pre><code data-trim contenteditable>
+var a = [1, 2, 3];
+var b = a.slice();
+a.push(4);
+console.log(b);
+</code></pre>
+
+* er... be careful, though...
+* object references are copied which means they'll still refer to the same object
+* __what is the output of the code below?__ &rarr;
+
+<pre><code data-trim contenteditable>
+var a = [{}, 2, 3];
+var b = a.slice();
+b[0].tricky = 'yup, same object';
+console.log(a);
+</code></pre>
+
+<pre><code data-trim contenteditable>
+[ { tricky: 'yup, same object' }, 2, 3 ]
+</code></pre>
+{:.fragment}
+
+<a href="http://pythontutor.com/javascript.html#code=var+a+%3D+%5B%7B%7D,+2,+3%5D%3B%0Avar+b+%3D+a.slice(%29%3B%0Ab%5B0%5D.tricky+%3D+'yup,+same+object'%3B%0Aconsole.log(a%29%3B&mode=display&origin=opt-frontend.js&cumulative=false&heapPrimitives=false&textReferences=false&py=js&rawInputLstJSON=%5B%5D&curInstr=3)">See the diagram</a>
+{:.fragment}
+
+</section>
+<section markdown="block">
+## indexOf
+
+If you'd like to find something in an Array, you can use the <code>indexOf</code> method. ([see the docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf)).
+
+* it returns the index of first occurrence of an element
+* -1 if the element doesn't exist
+* it has an optional start index as the second arg (where to start the search from)
+
+<pre><code data-trim contenteditable>
+console.log([1, 3, 3, 7].indexOf(3));
+console.log([1, 3, 3, 7].indexOf(8));
+console.log([1, 3, 3, 7].indexOf(3, 2));
+</code></pre>
+
+</section>
 <section markdown="block">
 ### Looping Over Arrays
 

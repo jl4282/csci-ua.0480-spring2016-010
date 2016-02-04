@@ -2,7 +2,7 @@
 * [About Class #3](slides/03/meta.html)
 * [Functions (finish up hoisting, closures, arguments, etc.)](slides/03/functions-addendum.html)
 * [Node, NPM, and git](slides/03/node-npm-debug-git.html)
-* [Objects and Arrays](slides/03/objects.html)
+* [Objects](slides/03/objects.html)
 
 </td>
 	<td markdown="block">

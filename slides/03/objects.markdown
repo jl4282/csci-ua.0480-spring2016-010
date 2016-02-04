@@ -16,10 +16,9 @@ title: Objects
 * Objects, Object Creation
 * Properties
 * Methods
-* String Methods
-* Array Methods
 * Math Methods 
 * Modifying and Deleting Properties
+* Mutability
 * Detecting Properties
 * Looping Over Objects
 </section>
@@ -195,10 +194,10 @@ console.log("here's one!")
 <section markdown="block">
 ## Methods (Again)
 
-Yeah... so it's worthwhile to repeat that __an object property can be a function__. 
+It's worthwhile to repeat that __an object property can be a function__. 
 
-* when an object's property is a function, that property is sometimes called a __method__
-* we can use what we know about objects and functions as objects to do this:
+* when an object's property is a function, it's sometimes called a __method__
+* let's use what we know about functions and objects to create methods
 
 
 <pre><code data-trim contenteditable>
@@ -223,7 +222,6 @@ obj.doStuff = function() {
     console.log("Hi, I'm a method!");    
 };
 </code></pre>
-
 
 </section>
 <section markdown="block">
@@ -337,9 +335,8 @@ __Use hasOwnProperty for now... so you won't have to worry about "inherited" pro
 Use a <code>for (prop in obj)</code> loop:
 
 * make sure that you use __hasOwnProperty__ in loop to exclude _inherited_ properties
-* don't use this kind of loop for <code>Arrays</code>
+* avoid using this kind of loop for <code>Arrays</code>
 	* does not preserve order
-	* includes _inherited_ properties
 <pre><code data-trim contenteditable>
 for (property in course) {
 	if (course.hasOwnProperty(property)) {

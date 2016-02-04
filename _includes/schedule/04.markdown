@@ -1,8 +1,9 @@
 	<td markdown="block">
+{% comment %}
 * [Git Issues](slides/04/git-issues.html)
-* [Questions: Default Values, Splice, Console.log](slides/04/questions-default-splice-log.html)
-* [String and Array Methods Review](slides/04/string-array-methods.html)
-* [Objects Addendum](slides/04/objects-addendum.html)
+{% endcomment %}
+* [Questions: Console.log](slides/04/questions-log.html)
+* [Strings and Arrays](slides/04/strings-arrays.html)
 * [Higher Order Functions](slides/04/higher-order-functions.html) 
 * [Higher Order Functions Continued](slides/04/higher-order-functions-continued.html) 
 
