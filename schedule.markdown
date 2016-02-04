@@ -65,10 +65,7 @@ nav-state: schedule
 * Require
 
 </td>
-{% comment %}
 {% include schedule/05.markdown %}
-{% endcomment %}
-<td></td><td></td><td></td>
 </tr>
 
 

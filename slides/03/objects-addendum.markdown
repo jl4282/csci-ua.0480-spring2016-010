@@ -9,34 +9,6 @@ title: Objects Addendum
 
 <p><small></small></p>
 </section>
-<section markdown="block">
-## Objects and Mutability
-
-* numbers, strings and booleans are all immutable! 
-* objects are not - they can be changed!
-* (for example - assignment)
-* arrays are objects; they're mutable too!
-* __we can try reversing an array two ways... return a new array or mutate the existing one__ &rarr;
-</section>
-<section markdown="block">
-## Mutability and References
-
-__What will this print out?__ &rarr;
-<pre><code data-trim contenteditable>
-a = [1, 2, 3];
-b = a;
-b.push(4);
-console.log(a, b);
-</code></pre>
-
-<pre><code data-trim contenteditable>
-[ 1, 2, 3, 4 ] [ 1, 2, 3, 4 ]
-</code></pre>
-{:.fragment}
-
-(We can use the slice method to copy an Array instead of _aliasing_: <code>a.slice()</code>) 
-{:.fragment}
-</section>
 
 <section markdown="block">
 ## Arguments Object

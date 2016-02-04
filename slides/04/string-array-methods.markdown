@@ -18,7 +18,7 @@ title: "String and Array Methods Review"
 <section markdown="block">
 ## Some Useful String Methods
 
-__Note that these methods don't mutate the original string:__ &rarr;
+__Note that these methods don't change the original string that they're called on:__ &rarr;
 
 * [split([separator][, limit])](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split) - splits a String object into an array of strings by separating the string into substrings - default is one element of original string if no separator is specified. &rarr;
 * [toUpperCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase) and [toLowerCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase) - um... self explanatory? &rarr;
