@@ -1,0 +1,233 @@
+---
+layout: homework
+title: CSCI-UA.0480 - Homework #2
+---
+
+<div class="panel panel-default">
+	<div class="panel-heading">Homework #2</div>
+	<div class="panel-body" markdown="block">
+
+# Chapter 5 Exercises and Basketball Stats, __Due Sept 22nd, by 11PM__
+
+## Overview
+
+kings 119 / nets 128
+
+http://stats.nba.com/game/#!/0021500754/
+http://data.nba.com/json/cms/noseason/game/20160205/0021500754/boxscore.json
+
+http://data.nba.com/json/cms/noseason/game/20121126/0021200013/boxscore.json
+https://github.com/fuzzthink/basketball-public/blob/master/nba/notes.txt
+### Description
+
+__exercises-ch05.js__ - Solve two exercises from Chapter 5 in {{ site.book_js }}.
+
+__basketball.js__ - Print out a report analyzing basketball games based off of JSON data. There are two parts to this file:
+
+* An initial version that works off of a JSON string within your code.
+* An iteration that works off of remote urls and additional data.
+
+See the [sample output](#hw02-sample) at the end of these instructions.
+
+### Submission Process
+
+You will be given access to a private repository on GitHub. It will contain two files, __exercises-ch05.js__ and __basketball.js__.
+
+The final version of your assignment should be in GitHub, but a submission should still be sent via NYU Classes.
+
+* __Push__ your changes to the homework repository on GitHub.
+* Add the URL of the repository to your assignment submission in NYU Classes.
+
+### (6 points) Make at Least 4 Commits
+
+* Commit multiple times throughout your development process.
+* Make at least 3 separate commits - (for example, one option may be to make one commit per part in the homework).
+
+### Regarding the Due Date
+
+* Although code is in GitHub, date of submission in NYU Classes will be used to determine late/not late (see submission process below).
+* Commits later than that date will be handled on a case-by-case basis.
+* 24 hour grace period where NYU Classes is still open.
+* After that, no late homeworks will be accepted.
+
+
+## Part 1 - Setup and Chapter 5 Exercises
+
+For this homework, you'll have files available in your repository, so you'll be cloning first.
+
+The solutions to the following problems can go in the same file - __exercises-ch05.js__:
+
+### Setup
+
+1. go to your github account...
+2. find your repository: NetID-homework02 (note... this __should be your NetID__)
+3. use the appropriate URL to run git clone
+
+<pre><code data-trim contenteditable>git clone [YOUR REPO URL]</code></pre>
+
+### (1 point) Flattening
+
+Solve the problem, __Flattening__, on page 102 of {{ site.book_js }}.
+
+* print out the result of running your code on the following array <code>[[2, 4, 6], [8], [10, 12]]</code>
+* See the docs on the <code>concat</code> array method [here](ttps://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat) or on page 76 of {{ site.book_js }}
+
+
+### (4 points) Every and Then Some
+
+Solve the problem, __Every and then some__, on page 103 of {{ site.book_js }}.
+
+* __every__
+	* print out the text, <code>Running every...</code>
+	* print out the result of running your <code>every</code> function to determine if every element in the following array is divisible by 3: <code>[9, 48, 204, 528942]</code> (just print out <code>true</code> or <code>false)</code>
+* __some__
+	* print out the text, <code>Running some...</code>
+	* print out the result of running your <code>some</code> function to determine if any string the following array has a length of exactly 9: <code>['aardvark', 'abbreviate', 'abacuses', 'abandoners', 'abalones']</code> (just print out <code>true</code> or <code>false)</code>
+
+## Part 2 - Heat vs Spurs, Local Copy of JSON Data
+
+The data for this game is sourced from [nba.com's Box Score for the Heat vs Spurs 6/15/2014](http://www.nba.com/games/20140615/MIASAS/gameinfo.html) (scroll down, and click on the box score tab... also the video on the page autoplays, so watch out!). You'll be using this data to extract some information from the game.
+
+### Importing Data
+
+* Start with a local copy of data by creating a variable and setting it equal to the string version (put it in quotes) of the game's data in JSON format (you can copy and paste the code below - __make sure you include the outer single quotes, since it's a string__!).
+* Use methods from the built-in <code>JSON</code> object to convert the string data into an actual JavaScript object. See [the slides](http://foureyes.github.io/csci-ua.0480-fall2015-001/slides/04/objects-addendum.html#/17) or the [docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON)
+* (This may seem odd at first, but it'll be useful later when we fetch remote data as a string)
+
+<pre><code>'[{"position": "F", "freeThrowsAttempted": 9, "defensiveRebounds": 9, "offensiveRebounds": 1, "threesMade": 3, "turnovers": 1, "freeThrowsMade": 8, "assists": 5, "threesAttempted": 9, "fieldGoalsMade": 10, "fieldGoalsAttempted": 21, "name": "L. James", "steals": 0, "team": "Heat"}, {"position": "F", "freeThrowsAttempted": 0, "defensiveRebounds": 2, "offensiveRebounds": 0, "threesMade": 1, "turnovers": 0, "freeThrowsMade": 0, "assists": 1, "threesAttempted": 2, "fieldGoalsMade": 1, "fieldGoalsAttempted": 2, "name": "R. Lewis", "steals": 0, "team": "Heat"}, {"position": "C", "freeThrowsAttempted": 2, "defensiveRebounds": 7, "offensiveRebounds": 0, "threesMade": 0, "turnovers": 0, "freeThrowsMade": 1, "assists": 2, "threesAttempted": 5, "fieldGoalsMade": 6, "fieldGoalsAttempted": 14, "name": "C. Bosh", "steals": 1, "team": "Heat"}, {"position": "G", "freeThrowsAttempted": 4, "defensiveRebounds": 3, "offensiveRebounds": 0, "threesMade": 1, "turnovers": 3, "freeThrowsMade": 2, "assists": 1, "threesAttempted": 2, "fieldGoalsMade": 4, "fieldGoalsAttempted": 12, "name": "D. Wade", "steals": 0, "team": "Heat"}, {"position": "G", "freeThrowsAttempted": 2, "defensiveRebounds": 4, "offensiveRebounds": 1, "threesMade": 1, "turnovers": 4, "freeThrowsMade": 2, "assists": 2, "threesAttempted": 3, "fieldGoalsMade": 1, "fieldGoalsAttempted": 8, "name": "R. Allen", "steals": 1, "team": "Heat"}, {"position": "F", "freeThrowsAttempted": 0, "defensiveRebounds": 0, "offensiveRebounds": 0, "threesMade": 0, "turnovers": 1, "freeThrowsMade": 0, "assists": 0, "threesAttempted": 0, "fieldGoalsMade": 0, "fieldGoalsAttempted": 0, "name": "S. Battier", "steals": 1, "team": "Heat"}, {"position": "C", "freeThrowsAttempted": 0, "defensiveRebounds": 5, "offensiveRebounds": 1, "threesMade": 0, "turnovers": 0, "freeThrowsMade": 0, "assists": 0, "threesAttempted": 0, "fieldGoalsMade": 0, "fieldGoalsAttempted": 1, "name": "C. Andersen", "steals": 1, "team": "Heat"}, {"position": "G", "freeThrowsAttempted": 2, "defensiveRebounds": 1, "offensiveRebounds": 0, "threesMade": 0, "turnovers": 0, "freeThrowsMade": 2, "assists": 1, "threesAttempted": 1, "fieldGoalsMade": 0, "fieldGoalsAttempted": 2, "name": "N. Cole", "steals": 0, "team": "Heat"}, {"position": "F", "freeThrowsAttempted": 0, "defensiveRebounds": 1, "offensiveRebounds": 0, "threesMade": 0, "turnovers": 0, "freeThrowsMade": 0, "assists": 0, "threesAttempted": 0, "fieldGoalsMade": 1, "fieldGoalsAttempted": 2, "name": "U. Haslem", "steals": 0, "team": "Heat"}, {"position": "F", "freeThrowsAttempted": 3, "defensiveRebounds": 1, "offensiveRebounds": 2, "threesMade": 0, "turnovers": 1, "freeThrowsMade": 1, "assists": 1, "threesAttempted": 0, "fieldGoalsMade": 4, "fieldGoalsAttempted": 7, "name": "M. Beasley", "steals": 0, "team": "Heat"}, {"position": "G", "freeThrowsAttempted": 5, "defensiveRebounds": 1, "offensiveRebounds": 0, "threesMade": 0, "turnovers": 0, "freeThrowsMade": 4, "assists": 0, "threesAttempted": 0, "fieldGoalsMade": 2, "fieldGoalsAttempted": 3, "name": "M. Chalmers", "steals": 1, "team": "Heat"}, {"position": "F", "freeThrowsAttempted": 0, "defensiveRebounds": 1, "offensiveRebounds": 0, "threesMade": 0, "turnovers": 0, "freeThrowsMade": 0, "assists": 0, "threesAttempted": 1, "fieldGoalsMade": 0, "fieldGoalsAttempted": 1, "name": "J. Jones", "steals": 0, "team": "Heat"}, {"position": "G", "freeThrowsAttempted": 0, "defensiveRebounds": 1, "offensiveRebounds": 0, "threesMade": 1, "turnovers": 0, "freeThrowsMade": 0, "assists": 1, "threesAttempted": 2, "fieldGoalsMade": 1, "fieldGoalsAttempted": 2, "name": "T. Douglas", "steals": 0, "team": "Heat"}, {"position": "F", "freeThrowsAttempted": 6, "defensiveRebounds": 8, "offensiveRebounds": 2, "threesMade": 3, "turnovers": 3, "freeThrowsMade": 5, "assists": 2, "threesAttempted": 4, "fieldGoalsMade": 7, "fieldGoalsAttempted": 10, "name": "K. Leonard", "steals": 1, "team": "Spurs"}, {"position": "F", "freeThrowsAttempted": 6, "defensiveRebounds": 6, "offensiveRebounds": 2, "threesMade": 0, "turnovers": 0, "freeThrowsMade": 4, "assists": 2, "threesAttempted": 0, "fieldGoalsMade": 5, "fieldGoalsAttempted": 10, "name": "T. Duncan", "steals": 0, "team": "Spurs"}, {"position": "C", "freeThrowsAttempted": 0, "defensiveRebounds": 8, "offensiveRebounds": 1, "threesMade": 1, "turnovers": 2, "freeThrowsMade": 0, "assists": 6, "threesAttempted": 3, "fieldGoalsMade": 2, "fieldGoalsAttempted": 7, "name": "B. Diaw", "steals": 1, "team": "Spurs"}, {"position": "G", "freeThrowsAttempted": 0, "defensiveRebounds": 2, "offensiveRebounds": 0, "threesMade": 0, "turnovers": 1, "freeThrowsMade": 0, "assists": 2, "threesAttempted": 3, "fieldGoalsMade": 0, "fieldGoalsAttempted": 5, "name": "D. Green", "steals": 2, "team": "Spurs"}, {"position": "G", "freeThrowsAttempted": 2, "defensiveRebounds": 1, "offensiveRebounds": 0, "threesMade": 0, "turnovers": 0, "freeThrowsMade": 2, "assists": 2, "threesAttempted": 1, "fieldGoalsMade": 7, "fieldGoalsAttempted": 18, "name": "T. Parker", "steals": 0, "team": "Spurs"}, {"position": "G", "freeThrowsAttempted": 5, "defensiveRebounds": 4, "offensiveRebounds": 0, "threesMade": 3, "turnovers": 2, "freeThrowsMade": 4, "assists": 4, "threesAttempted": 6, "fieldGoalsMade": 6, "fieldGoalsAttempted": 11, "name": "M. Ginobili", "steals": 0, "team": "Spurs"}, {"position": "C", "freeThrowsAttempted": 2, "defensiveRebounds": 2, "offensiveRebounds": 0, "threesMade": 0, "turnovers": 0, "freeThrowsMade": 1, "assists": 2, "threesAttempted": 0, "fieldGoalsMade": 1, "fieldGoalsAttempted": 1, "name": "T. Splitter", "steals": 1, "team": "Spurs"}, {"position": "G", "freeThrowsAttempted": 0, "defensiveRebounds": 1, "offensiveRebounds": 0, "threesMade": 5, "turnovers": 0, "freeThrowsMade": 0, "assists": 2, "threesAttempted": 8, "fieldGoalsMade": 6, "fieldGoalsAttempted": 10, "name": "P. Mills", "steals": 0, "team": "Spurs"}, {"position": "F", "freeThrowsAttempted": 0, "defensiveRebounds": 0, "offensiveRebounds": 0, "threesMade": 0, "turnovers": 0, "freeThrowsMade": 0, "assists": 2, "threesAttempted": 0, "fieldGoalsMade": 0, "fieldGoalsAttempted": 0, "name": "M. Bonner", "steals": 0, "team": "Spurs"}, {"position": "G", "freeThrowsAttempted": 0, "defensiveRebounds": 2, "offensiveRebounds": 0, "threesMade": 0, "turnovers": 0, "freeThrowsMade": 0, "assists": 1, "threesAttempted": 0, "fieldGoalsMade": 2, "fieldGoalsAttempted": 3, "name": "M. Belinelli", "steals": 0, "team": "Spurs"}, {"position": "C", "freeThrowsAttempted": 0, "defensiveRebounds": 0, "offensiveRebounds": 0, "threesMade": 0, "turnovers": 0, "freeThrowsMade": 0, "assists": 0, "threesAttempted": 0, "fieldGoalsMade": 1, "fieldGoalsAttempted": 1, "name": "J. Ayres", "steals": 0, "team": "Spurs"}, {"position": "G", "freeThrowsAttempted": 0, "defensiveRebounds": 0, "offensiveRebounds": 0, "threesMade": 0, "turnovers": 0, "freeThrowsMade": 0, "assists": 0, "threesAttempted": 1, "fieldGoalsMade": 0, "fieldGoalsAttempted": 2, "name": "C. Joseph", "steals": 0, "team": "Spurs"}, {"position": "F", "freeThrowsAttempted": 2, "defensiveRebounds": 0, "offensiveRebounds": 1, "threesMade": 0, "turnovers": 0, "freeThrowsMade": 2, "assists": 0, "threesAttempted": 0, "fieldGoalsMade": 0, "fieldGoalsAttempted": 0, "name": "A. Baynes", "steals": 0, "team": "Spurs"} ]'
+</code></pre>
+
+## Examining the Data
+
+* The resulting data should be an array with multiple _player_ objects
+* Examine the properties in the player objects:
+	* <code>name</code>: (String the player's name
+	* <code>team</code>: (String) the team that the player is on
+	* <code>position</code>: (String) the player's position - (G)uard, (F)orward or (C)enter
+	* <code>fieldGoalsMade</code>: (Number) the number of field goals (both two pointers and three pointers, worth 2 and 3 points each respectively) that a player made
+	* <code>fieldGoalsAttempted</code>: (Number) the number of field goals (both two pointers and three pointers) that a player attempted
+	* <code>freeThrowsMade</code>: (Number) the number of free throws that a player made (each only worth 1 point)
+	* <code>freeThrowsAttempted</code>: (Number) the number of free throws that a player attempted 
+	* <code>defensiveRebounds</code>: (Number) the player's number of defensive rebounds
+	* <code>offensiveRebounds</code>: (Number) the player's number of offensive rebounds
+	* <code>threesMade</code>: (Number) the number of three point field goals that a player made
+	* <code>threesAttempted</code>: (Number) the number of three point field goals that a player attempted
+	* <code>turnovers</code>: (Number) the number of turnovers a player made (loss of possession of ball)
+	* <code>assists</code>: (Number) the number of assists that a player made (the number of passes that led to a score)
+	* <code>steals</code>: (Number) the number of steals that a player made (the number of times the ball is taken away from a player on the opposing team)
+
+## Calculations
+
+### (6 points) Implementation Requirements
+You must use __at least three__ of the following Array methods __at least once each__ in your program:
+
+* forEach
+* filter
+* map
+* reduce
+
+
+### (5 points) Final Score
+
+* Print out the final score of the game based on the data provided.
+* The score for each team can be calculated by summing the following values for each player on that team:
+	* __3 points__ for every of three point field goal made 
+	* __2 points__ for every two point field goal made
+	* __1 point__ for every free throw made
+* Note that the number of 2 point field goals made is actually number of fieldGoalsMade  - threesMade (because fieldGoalsMade counts both twos and threes)
+* Output the score in the following format: <code>Final Score: Team1 Score1, Team2 Score2.
+* Print out 5 equals signs on the next line: <code>=====</code>.
+* Example output:
+
+<pre><code data-trim contenteditable>Final Score: Heat 87, Spurs 104
+=====
+</code></pre>
+
+### (5 points) Player With Highest Percentage of Points From Three Pointers
+
+* Print out the name of the player that scored __at least 10 points__ and had the highest percentage of their points from three point shots.
+* The output should be in the following format: <code> * Player with highest percentage of points from three pointers: Player Name</code>. 
+* Example output:
+
+<pre><code data-trim contenteditable>* Player with highest percentage of points from three pointers: P. Mills
+</code></pre>
+
+### (5 points) Team With Most Rebounds
+
+* Print out the name of the team that had the most rebounds, along with the number of rebounds that they had.
+* The number of rebounds is the sum of Offensive Rebounds and Defensive Rebounds.
+* The output should be in the following format: <code>Team with most rebounds: Team Name with Number of Rebounds</code>.
+* Example output:
+<pre><code data-trim contenteditable>* Team with most rebounds: Heat with 41
+</code></pre>
+
+### (5 points) Non Guard Player With Most Assists
+
+* Print out the name of the player (that doesn't play the Guard position) that had the most assists, along with the number of assists that they had.
+* Anyone who's value in the <code>position</code> property is not <code>G</code> is not a guard.
+* The output should be in the following format: <code>Non guard player with most assists: Player Name with Number of Assists</code>.
+* Example output:
+<pre><code data-trim contenteditable>* Non guard player with most assists: B. Diaw with 6
+</code></pre>
+
+### (5 points) Players With More Turnovers Than Assists
+
+* List all of the players that have more turnovers than assists.
+* The format of the output should be: <code> * Players with more turnovers than assists:</code>.
+* ...Followed by a list of player names.
+* Example output:
+
+<pre><code data-trim contenteditable>* Players with more turnovers than assists:
+  D. Wade
+  R. Allen
+  S. Battier
+  K. Leonard
+</code></pre>
+
+<!--* -->
+
+### Example Output
+
+<a name="hw02-sample"></a>
+
+<pre><code>
+Final Score: Heat 87, Spurs 104
+=====
+* Player with highest percentage of points from three pointers: P. Mills
+* Team with most rebounds: Heat with 41
+* Non guard player with most assists: B. Diaw with 6
+* Players with more turnovers than assists:
+  D. Wade
+  R. Allen
+  S. Battier
+  K. Leonard
+</code></pre>
+
+<!--* -->
+
+## Part 3 - Heat vs Spurs and Thunder vs Clippers, Retrieve JSON from URL
+
+
+### (2 points) Setup for Retrieving JSON 
+
+Instead of hardcoding a JSON string in your program, change your code so that it requests JSON data from the specified url. Run your report on both sets of data. Change your program accordingly... and remember that __you can overwrite your existing file__ (the diffs are in git anyway).
+
+* Install the requests library in your project's root folder: <code>npm install request</code> (similar to installing sync-prompt in the previous assignment)
+* Add the module to the beginning of your program (again, similar to using sync-prompt in the previous assignment)
+* Add <code>node_modules</code> to your <code>.gitignore</code> file so that it isn't tracked by git (same as previous assignment)
+* [Read the documentation](https://github.com/mikeal/request) to see how to use the module (or see the [slides](http://foureyes.github.io/csci-ua.0480-fall2015-001/slides/03/node-npm-debug-git.html#/6))
+
+### (6 points) Process Data From Requested JSON
+
+* At the beginning of your program, use the <code>requests</code> module to retrieve the following URLs
+	* [http://foureyes.github.io/csci-ua.0480-fall2015-001/homework/02/2014-06-15-heat-spurs.json](http://foureyes.github.io/csci-ua.0480-fall2015-001/homework/02/2014-06-15-heat-spurs.json)
+	* [http://foureyes.github.io/csci-ua.0480-fall2015-001/homework/02/2014-04-09-thunder-clippers.json](http://foureyes.github.io/csci-ua.0480-fall2015-001/homework/02/2014-04-09-thunder-clippers.json)
+* Process the data from each URL to print out a report on both games.
+	* Do this by moving all of your processing logic into a callback function.
+	* Use that callback function to handle data from your requests.
+
+
+</div>
+
+</div>
+

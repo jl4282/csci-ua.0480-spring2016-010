@@ -63,7 +63,6 @@ __Are you familiar with these functions?__ &rarr;
 
 * array_walk, array_map, array_filter, array_reduce in PHP
 * for in, map, filter, reduce in Python
-* etc.
 {:.fragment}
 
 

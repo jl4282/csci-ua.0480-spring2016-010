@@ -12,9 +12,11 @@
 * [{{ site.book_js }}]({{ site.book_js_link }}) <br> Chapter 5 - Higher Order Functions
 </td>
 	<td markdown="block">
-Due Feb 11th (Th)
+<strike>Due Feb 11th (Th)</strike>
 
-* Homework #02 to be posted 
+* <strike>Homework #02 to be posted</strike>
+
+Homework will be posted after we cover higher order functions in-depth in class 5.
 {% comment %}
 [Homework #2](assignments.html#hw02)
 {% endcomment %}

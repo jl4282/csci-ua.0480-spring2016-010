@@ -323,7 +323,8 @@ var cards = [{'suit':'♦', 'face':'4'},
 <section markdown="block">
 ## Counting Face Cards
 
-__Let's start with the most convential way...__ &rarr;
+__Let's try the most convential way... together__. (also, add it to your [in-class programming activity form](https://docs.google.com/a/nyu.edu/forms/d/1j14LMEy3KFWT9gBxlpLmUfEtr699LcQ36_DOVSD4I_4/viewform)). &rarr;
+
 <pre><code data-trim contenteditable>
 var count = 0;
 cards.forEach(function(card) {
@@ -335,9 +336,14 @@ console.log(count);
 </code></pre>
 {:.fragment}
 
-__And with filter__ ...
+
+__Now write your own versions using the following two methods...__  &rarr;
 {:.fragment}
 
+1. {:.fragment} with an <code>Array</code>'s <code>filter</code> method
+2. {:.fragment} ...and an <code>Array</code>'s <code>reduce</code> method
+
+{% comment %}
 <pre><code data-trim contenteditable>
 function isFaceCard(card) {
   return ['J', 'Q', 'K'].indexOf(card.face) !== -1;
@@ -356,6 +362,7 @@ function count(curTotal, card) {
 console.log(cards.reduce(count, 0));
 </code></pre>
 {:.fragment}
+{% endcomment %}
 </section>
 
 <section markdown="block">
