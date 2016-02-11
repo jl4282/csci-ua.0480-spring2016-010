@@ -78,10 +78,7 @@ nav-state: schedule
 * Patterns
 
 </td>
-{% comment %}
 {% include schedule/06.markdown %}
-{% endcomment %}
-<td></td><td></td><td></td>
 </tr>
 
 

@@ -361,6 +361,24 @@ However, as soon as you perform an _object-like_ operation on them, such as a me
 [See this article on the _secret_ life of JavaScript primitives!](http://javascriptweblog.wordpress.com/2010/09/27/the-secret-life-of-javascript-primitives/)
 </section>
 
+<section markdown="block">
+## And Finally... JSON
+
+
+JSON or _JavaScript Object Notation_ is a data storage and communication format based off of JavaScript object literals... but with a few modifications:
+
+* all property names are surrounded by double quotes
+* values are restricted to simple data: no function calls, variables, comments or computations
+
+
+<br>
+Conversion to-and-from JSON can be done using the following methods on the built-in JSON object:
+
+* [stringify(value)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) - returns a JSON string representation of the value passed in
+* [parse(text)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse) - returns an object created from the supplied JSON text
+
+</section>
+
 
 {% comment %}
 <section markdown="block">

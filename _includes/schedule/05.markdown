@@ -17,5 +17,5 @@ In-class programming activity:
 
 Due Feb 16th (Tu)
 
-* Homework #02 to be posted Wednesday afternoon
+* [Homework #02](homework/02.html) 
 </td>
