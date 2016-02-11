@@ -1,6 +1,6 @@
 	<td markdown="block">
 * Homework
-* We missed covering [JSON from a previous class](http://localhost:4000/slides/03/objects.html#/20)
+* We missed covering [JSON from a previous class](slides/03/objects.html#/20)
 * [Objects Revisited](slides/06/objects-prototypes.html)
 * [A Detour: Globals, Methods, and This](slides/06/globals-methods-this.html)
 * [Objects and Prototypes](slides/06/prototypes.html)
