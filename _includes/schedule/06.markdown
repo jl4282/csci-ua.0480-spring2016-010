@@ -4,6 +4,7 @@
 * [Objects Revisited](slides/06/objects-prototypes.html)
 * [A Detour: Globals, Methods, and This](slides/06/globals-methods-this.html)
 * [Objects and Prototypes](slides/06/prototypes.html)
+* Maybe talk about require again from previous class?
 * [Patterns, Errors, Use Strict](slides/06/patterns-errors-strict.html)
 </td>
 	<td markdown="block">
