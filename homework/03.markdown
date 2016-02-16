@@ -1,0 +1,377 @@
+---
+layout: homework
+title: CSCI-UA.0480 - Homework #3
+---
+
+<div class="panel panel-default">
+	<div class="panel-heading">Homework #3</div>
+	<div class="panel-body" markdown="block">
+
+# Node's HTTP Module, First Express Project, __Due Tues, Feb 23rd__, by 11PM
+
+## Overview
+
+### Description
+
+__objects.js__ - Design objects
+
+__demo.js__ - Create a demo site using node's http module.
+
+__test.js__ - Create a browser test page site using Express.
+
+### Submission Process
+
+You will be given access to a private repository on GitHub. It will contain two files, __demo.js__ and __test.js__.
+
+* __Push__ your changes to the homework repository on GitHub.
+* Commits later than that date will not be included in grading
+
+### (3 points) Make at Least 4 Commits
+
+* Commit multiple times throughout your development process.
+* Make at least 3 separate commits - (for example, one option may be to make one commit per part in the homework).
+
+## Part 1 - Designing Objects 
+
+Design a series of objects to create a computer-controlled Rock Paper Scissors player.
+
+### Rules
+
+* two players simultaneously choose to play rock, paper, or scissors... with paper beating rock, rock beating scissors and scissors betting paper
+* check out [the rules for more details](https://en.wikipedia.org/wiki/Rock-paper-scissors)
+
+### Overview
+
+You'll be creating objects that represent a player. (Note that you're not actually implementing a full game!). The player will be able to:
+
+* move (and remember their last move)
+* remember their opponent's moves
+
+The player should have:
+
+* a name
+* a list of all of their previous moves
+* a list of all of their opponent's previous moves
+
+__You'll be doing this two ways__
+
+* using inheritance (remember _is-a_ from 101?)
+* using composition (remember _has-a_ from 101?)
+* [more details on composition](https://en.wikipedia.org/wiki/Has-a)
+* You will be creating 4 constructors total, 2 for each version (inheritance and composition)
+
+#### (5 points) Inheritance
+
+__You will create two constructors__ , one for <code>Player</code> and one for <code>HistoryRepeatsItselfPlayer</code>, which inherits from <code>Player</code>. Instances created from <code>Player</code> only play rock. Instances created from <code>HistoryRepeatsItselfPlayer</code> plays based on opponent's previous move, or random if no previous move exists.
+
+
+* read [chapter 6 in {site.book_js}](http://eloquentjavascript.net/06_object.html)
+* pay close attention to the section on [inheritance](http://eloquentjavascript.net/06_object.html#h_/a3bnONnws)
+
+Note the pattern that is used for setting a constructor's prototype property:
+
+<pre><code data-trim contenteditable>MyObj1.prototype = Object.create(MyObj2.prototype);
+</code></pre>
+
+Rather than inheriting from a directly created instance of <code>MyObj2</code>, it creates a fresh object with MyObj2's prototype property (remember, this is the _actual_ property named <code>prototype</code>, of a <code>Function</code> object) as the prototype of <code>MyObj1</code>. 
+
+This essentially inherits everything defined in <code>MyObj2</code>'s prototype property, which are usually just methods.
+
+To inherit the properties set by the constructor, the example shows that <code>MyObj1</code>'s constructor calls its _super_'s constructor:
+
+<pre><code data-trim contenteditable>MyObj2.call(this, text);
+</code></pre>
+
+Since constructors are just functions, you can use <code>call</code>... and pass in <code>this</code> (which is the new instance) as the object that the method is being called on.
+
+So, for this part, create two objects, a regular player... that always plays rock, and a smarter player that plays a move that wins based on their opponent's previous move (or plays random if their opponent hasn't moved yet).
+
+* create a <code>Player</code> constructor
+* it should set the player's name and initialize the Arrays that contain the history of moves (each move represented by R, P, and S)
+* implement the following methods:
+	* <code>move()</code> - generates the next move, saves it in historical moves, and returns it
+		* note that it may be helpful to separate this out into two methods
+		* <code>move</code> - which calls <code>getNextMove</code> __and__ saves it
+		* this will always be rock at first!
+	* <code>recordOpponentMove(opponentMove)</code> - takes in a single argument, and saves that as their opponent's last move
+* create a <code>HistoryRepeatsItselfPlayer</code>
+	* it should _inherit_ from <code>Player</code>
+	* mimic inheritance using the section on [inheritance](http://eloquentjavascript.net/06_object.html#h_/a3bnONnws) referenced earlier
+	* redefine <code>move</code> (and/or <code>getNextMove</code>) so that the move is based off of the opponent's last move
+		* look at the opponent's Array of moves
+		* determine which play will beat the last move
+		* use that as the player's next move
+		* or play random if there are no previous moves from the opponent
+* create an instance of <code>Player</code>
+	* print out that player's name
+	* generate a move and print it out
+	* record paper as the opponent's move
+	* generate another move and print it out
+	* print out all historical moves of the player and their opponent
+* create an instance of <code>HistoryRepeatsItselfPlayer</code>
+	* print out that player's name
+	* generate a move and print it out
+	* record rock as the opponent's move
+	* generate another move and print it out
+	* record paper as the opponent's move
+	* generate another move and print it out
+	* print out all historical moves of the player and their opponent
+* your output should look similar to this:
+
+<pre><code data-trim contenteditable>Normal Nancy
+---------
+Nancy always plays rock: R
+Nancy always plays rock, regardless of her opponent's last move: R
+All of Nancy's moves so far:  [ 'R', 'R' ]
+All of her opponent's moves so far:  [ 'P' ]
+
+...
+
+Timely Tabitha
+---------
+Tabitha's first move should be random: S
+If her last opponent's move was rock, she'll play paper: P
+If her last opponent's move was paper, she'll play scissors: S
+All of Tabitha's moves so far:  [ 'S', 'P', 'S' ]
+All of her opponent's moves so far:  [ 'R', 'P' ]
+</code></pre>
+
+
+#### (5 points) Composition
+
+For this part, instead of creating a hierarchy of types, create a <code>StrategyPlayer</code> object that __has-a__ strategy object as a property. The strategy object that you implement will be <code>LookAtPreviousMoveStrategy</code>.
+
+Composition is basically creating an object that is made up of other objects. For example, in the code below, we have A, which is made up of B and C:
+
+<pre><code data-trim contenteditable>function A(b, c) {
+	this.b = b;
+	this.c = c;
+}
+
+A.prototype.foo = function() {
+	this.b.bar();
+	this.c.qux();
+}
+
+function B() {}
+B.prototype.bar = function() { console.log('bar');}
+
+function C() {}
+C.prototype.qux = function() { console.log('qux');}
+
+obj = new A(new B(), new C());
+obj.foo();
+</code></pre>
+
+__You will create two constructors__, one for <code>StrategyPlayer</code>, which can make an instance  that has a move and recordOpponentMove...  and another constructor for <code>LookAtPreviousMoveStrategy</code>, which is an object that encapsulates the logic for making the next move. <code>StrategyPlayer</code> will have an instance of <code>LookAtPreviousMoveStrategy</code> (hint: pass in the strategy object instance in the constructor and assign - see examples above) that it will use whenever it needs to make a move.
+
+* for this version, create a <code>StrategyPlayer</code> constructor
+	* it should set the object's name
+	* ...and it's strategy (an object passed in to the constructor)
+	* of course, it will also initialize the histories of the player's moves and the opponent's moves
+* define the <code>recordOpponentMove</code> method
+* define the <code>move</code> method... the move method should rely on the strategy object (see below) to determine what the next move should be
+* create a <code>LookAtPreviousMoveStrategy</code> constructor...
+	* it should have a <code>getNextMove</code> method that takes an <code>Array</code> of moves...
+	* takes the last move
+	* and returns R, P or S based on which one will beat the last move
+	* or random if no previous opponent moves
+* create an instance of <code>StrategyPlayer</code> (pass in a name, and an instance of <code>LookAtPreviousMoveStrategy</code>)
+	* print out that player's name
+	* generate a move and print it out
+	* record rock as the opponent's move
+	* generate another move and print it out
+	* record paper as the opponent's move
+	* generate another move and print it out
+	* print out all historical moves of the player and their opponent
+* example output below:
+
+
+<pre><code data-trim contenteditable>Previous Patty
+---------
+Tabitha's first move should be random: R
+If her last opponent's move was rock, she'll play paper: P
+If her last opponent's move was paper, she'll play scissors: S
+All of Tabitha's moves so far:  [ 'R', 'P', 'S' ]
+All of her opponent's moves so far:  [ 'R', 'P' ]
+</code></pre>
+
+
+## Part 2 - Demo Site
+
+Create a small demo site using node's <code>http</code> module. Use the <code>fs</code> module to serve static files.
+
+Note that this part of the assignment is based off of slides from __class 7__ and Chapter 2 - __Getting Started With Node__ from {{ site.book_web }}.
+
+### Web Server and Routing
+
+* (12 points) The site should respond to the following urls with the specified status code, content-type and body:
+	* <code>/</code> - __homepage__
+		* <code>200</code>
+		* <code>text/html</code>
+		* body from <code>./public/index.html</code>
+	* <code>/home</code> - __homepage__
+		* <code>200</code>
+		* <code>text/html</code>
+		* body from <code>./public/index.html</code>
+	* <code>/about</code> - __about page__
+		* <code>200</code>
+		* <code>text/html</code>
+		* body from <code>./public/about.html</code>
+	* <code>/me</code>  - __about page (redirect)__
+		* <code>301</code>
+		* this should redirect to <code>/about</code>
+		* do this by setting an appropriate response header 
+		* __(you'll need to do some research to find out which header you should set)__
+			* __TRY USING  <code>curl</code> or Chrome's web developer tools while making a request to google.com (no www)__
+			* what status code does it give back?
+			* what body does it give back (if any)?
+			* does it include any additional headers? (hint: __it does, and it's important!__)
+			* use the above information to craft an appropriate response
+			* __don't just send back the same template as about__ ... instead, just send back the response code and appropriate header
+	* <code>/img/image1.png</code> - __image1__
+		* <code>200</code>
+		* <code>image/png</code>
+		* body from <code>./public/img/image1.png</code>
+	* <code>/img/image2.png</code> - __image2__
+		* <code>200</code>
+		* <code>image/png</code>
+		* body from <code>./public/img/image2.png</code>
+	* <code>/css/base.css</code> - __stylesheet__
+		* <code>200</code> 
+		* this is a stylesheet, so set your content-type appropriately
+		* __(do some research to find the right content-type)__
+		* contents of file should come from <code>./public/css/base.css</code>
+	* <code>[any other url]</code> - __page not found__
+		* <code>404</code> 
+		* <code>text/html</code> 
+		* body from <code>/public/404.html</code>
+	* <code>[server error]</code>
+		* if a static file can't be loaded...
+		* respond with a 500
+* (2 points) __Every url should respond to any casing__ (for example both <code>ABOUT</code> and <code>about</code> should work)
+* (2 points) __Every url should work with or without a trailing slash__ (for example both <code>about</code> and <code>about/</code> should work)
+
+### (3 points)Static File Content
+
+* The contents of the static files are as follows:
+	* __index.html__ 
+		* a heading (an h1) that says: <code>Home</code>
+		* a paragraph with any text (whatever text you like)
+		* an image named image1.png (whatever image you like)
+	* __about.html__ 
+		* a heading (an h1) that says: <code>About</code>
+		* a paragraph with any text (whatever text you like)
+		* an image named image2.png (whatever image you like)
+	* both pages should use the __base.css__ stylesheet:
+		* sets the body font to 1.5em
+		* center aligns everything
+		* sets the font to sans-serif
+		* sets the background to light gray (#aaaaaa)
+* See some example screen shots below:
+
+![screen 1](../resources/img/hw3-demo-home.png)
+
+![screen 2](../resources/img//hw3-demo-about.png)
+
+### (3 points) Logging
+
+* __log every request to the console__
+* a log line should consist of:
+	* the date and time of the request (do research on the __Date__ object and its __toLocaleString__ method)
+	* the request method (GET, POST, etc.)
+	* the url requested (for example, <code>/about</code>)
+	* the status code of the response (for example, <code>200</code>)
+* __Here's an example of the format to follow:__ &rarr;
+
+<pre><code data-trim contenteditable>Tue Sep 28 2015 23:02:37 GMT-0400 (EDT) GET / 200 OK
+Tue Sep 28 2015 23:02:37 GMT-0400 (EDT) GET /img/image1.png 200 OK
+Tue Sep 28 2015 23:02:43 GMT-0400 (EDT) GET /doesnotexist 404 Not Found
+Tue Sep 28 2015 23:03:10 GMT-0400 (EDT) GET /me 301 Moved Permanently
+Tue Sep 28 2015 23:03:10 GMT-0400 (EDT) GET /about 200 OK
+Tue Sep 28 2015 23:03:10 GMT-0400 (EDT) GET /img/image2.png 200 OK
+</code></pre>
+
+### (4 points) Testing Your Site
+
+* Create a file called __output.txt__
+* __Use curl -I to run the following requests__ ... copy and paste the output (it should only be the headers) to your output.txt file 
+	* <code>/</code>
+	* <code>/about</code>
+	* <code>/ABOUT</code>
+	* <code>/about/</code>
+	* <code>/me</code>
+	* <code>/css/base.css</code>
+	* <code>/img/image1.png</code>
+
+
+## Part 3 - Browser Test Page
+
+Create a small site using Express. The site will only have two pages... the index page which will show all of the headers that a browser requested... and an about page.
+
+The index page will display all of the headers that the browser sent to the server.
+
+Note that this part of the assignment is based off of slides from __class 8__ and Chapter 3 - __Saving Time With Express__ from {{ site.book_web }}.
+
+### (5 points) Project Setup Requirements
+
+* Create a <code>package.json</code> by running <code>npm init</code> in your project directory. You can use the default answers to all of the questions
+* Install your web framework, <code>express</code> and your templating library, <code>express3-handlebars</code> using the <code>--save</code> flag to save your dependencies
+* For example: <code>npm install --save express</code> 
+* Make sure you do this in your project's root directory
+* You should see a <code>node_modules</code> directory
+* Ignore it using .gitignore
+
+### (4 points) Web Server and Routing
+
+The site should respond to the following urls with the specified views (the path is relative to your project's root directory):
+
+* <code>/</code> - __browser test page / index__
+	* <code>views/index.handlebars</code>
+* <code>/about</code> - __about__
+	* <code>views/about.handlebars</code>
+* <code>[any other url]</code> - __404__
+	* explicitly send back a <code>404</code>
+	* <code>views/404.handlebars</code>
+
+### (7 points) Content
+
+* __all of your views should be in a directory called <code>views</code> in the root of your project directory__
+* all of the views should be based off of a layout 
+	* this layout is <code>main.handlebars</code>
+	* which should be located in <code>views/layouts</code>
+	* it should contain all of the surrounding tags - (html, head, body, etc.) 
+	* as well as links to both of the other pages <code>/</code> and <code>about</code>
+* the about page should contain 
+	* a single heading that says <code>About</code>
+	* some text in a paragraph tag underneath
+* the index page should contain
+	* a single heading that says <code>Browser Test Page</code>
+	* within a <code>pre</code> tag, all of the headers that were sent as part of the browser's request
+	* you can do this by: 
+		* handing the headers to over to the view (as part of the the 2nd argument passed into <code>res.render()</code>)
+		* in your view, using the each helper to iterate over the <code>headers</code> object
+		* [see the docs on the each helper](http://handlebarsjs.com/builtin_helpers.html)
+	* an example of the contents of the index page, as well as some screens:
+
+<pre><code data-trim contenteditable>host: localhost:3000
+connection: keep-alive
+accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+referer: http://localhost:3000/about
+accept-encoding: gzip,deflate,sdch
+accept-language: en-US,en;q=0.8
+</code></pre>
+
+<div markdown="block" class="img">
+![screen 1](../resources/img/hw3-test-index.png)
+</div>
+
+<div markdown="block" class="img">
+![screen 1](../resources/img/hw3-test-about.png)
+</div>
+
+
+</div>
+
+</div>

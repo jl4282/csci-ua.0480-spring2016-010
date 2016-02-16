@@ -12,6 +12,11 @@
 * {{ site.book_web }} <br> Chapter 2 - Getting Started With Node
 </td>
 	<td markdown="block">
+
+Due Feb 16th (Tu)
+
+* to be posted Wednesday afternoon
+
 <!--
 * [](assignments/.html)
 -->

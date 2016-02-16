@@ -88,10 +88,7 @@ nav-state: schedule
 * Intro to Web Development
 * A Web Server
 </td>
-{% comment %}
 {% include schedule/07.markdown %}
-{% endcomment %}
-<td></td><td></td><td></td>
 </tr>
 
 
