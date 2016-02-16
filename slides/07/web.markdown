@@ -143,7 +143,7 @@ A collection of interconnected documents (web pages) and other resources (images
 
 Each document or resource on the web is retrievable by a name, a __URL__ (Universal Resource Locator). __What are the parts to a URL?__ &rarr;
 
-* {:.fragment} __scheme/protocol__ - http
+* {:.fragment} __scheme/protocol__ - http (er, browsers accept schema-less)
 * {:.fragment} __domain or actual ip address__ - pizzaforyou.com
 * {:.fragment} __port__ (optional) - 80 (default if http)
 * {:.fragment} __path__ - /search
@@ -164,7 +164,11 @@ __Each machine connected to the Internet gets a unique IP address.__
 
 We can map domains to IP addresses through DNS (Domain Name System). 
 
-Both IP Addresses and domains are acceptable in a URL.
+* both IP Addresses and domains are acceptable in a URL.
+* on OSX, Linux (and windows), there's a file that allows you to map names to ip addresses (before using dns)
+* typically <code>/etc/hosts</code> or <code>hosts.txt</code>
+* <code>localhost</code> maps to <code>127.0.0.1</code>... which essentially is _your_ computer
+
 </section>
 
 <section markdown="block">
