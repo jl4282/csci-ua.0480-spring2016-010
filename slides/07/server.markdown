@@ -37,7 +37,7 @@ Note that we:
 * brought in the http module
 * called a function named createServer
 	* the function createServer took a callback
-	* the callback respondes to requests
+	* the callback responds to requests
 	* the response object was populated with headers and text
 * the object created from createServer listened on port 3000
 </section>

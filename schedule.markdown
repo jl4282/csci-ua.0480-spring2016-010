@@ -100,10 +100,7 @@ nav-state: schedule
 * Express
 * (Static Sites, Remote Server Administration)
 </td>
-{% comment %}
 {% include schedule/08.markdown %}
-{% endcomment %}
-<td></td><td></td><td></td>
 </tr>
 
 

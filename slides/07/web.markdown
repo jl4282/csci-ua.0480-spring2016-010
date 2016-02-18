@@ -281,13 +281,18 @@ Accept-Language: en-US,en;q=0.8
 A response:
 
 <pre><code data-trim contenteditable>
-HTTP/1.1 200 Success
-Date: Tue, 23 Sep 2014 12:30:57 GMT
-Server: Apache/2.2.22 (Ubuntu)
-Connection: Keep-Alive
-Keep-Alive: timeout=5, max=100
-ETag: "e02a8-10dc-5020994f18bcf"
-Vary: Accept-Encoding
+HTTP/1.1 200 OK
+Date: Thu, 18 Feb 2016 15:23:39 GMT
+Server: Apache/2.2.15 (Red Hat)
+Accept-Ranges: bytes
+Content-Length: 163
+Content-Type: text/html; charset=UTF-8
+Set-Cookie: STATICSERVERID=s3; path=/
+Cache-control: private
+.
+.
+.
+(html)
 </code></pre>
 </section>
 
@@ -302,7 +307,21 @@ Vary: Accept-Encoding
 __nc__ is a commandline utility for TCP connection and communication through UDP. It can take a host and port as arguments:
 
 <pre><code data-trim contenteditable>
-nc www.jvers.com 80
+nc cs.nyu.edu 80
+</code></pre>
+
+Then... start typing! Let's try to retrieve the root document (<code>/</code>).
+
+<pre><code data-trim contenteditable>
+GET / HTTP/1.1
+Host: cs.nyu.edu
+</code></pre>
+
+Or... the document <code>/home/index.html</code>
+
+<pre><code data-trim contenteditable>
+GET /home/index.html HTTP/1.1
+Host: cs.nyu.edu
 </code></pre>
 </section>
 
@@ -311,8 +330,14 @@ nc www.jvers.com 80
 
 __curl__ is a command line tool to transfer data to and from a server. The -I flag retrieves headers only.
 <pre><code data-trim contenteditable>
-curl -I jvers.com/teaching
-curl -I jvers.com/teaching/
+# get the response headers for google.com only
+curl -I google.com
+
+# get the response headers for www.google.com only
+curl -I www.google.com
+
+# get the entire response (including body)
+curl www.google.com
 </code></pre>
 </section>
 
