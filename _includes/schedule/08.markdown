@@ -14,5 +14,8 @@
 * [{{ site.book_js }}]({{ site.book_js_url }}) <br> Chapter 20 - Node (up to streams)
 </td>
 	<td markdown="block">
+Due Feb 26th (Fri)
+
+* [Homework #03](homework/03.html) 
 
 </td>

@@ -7,13 +7,15 @@ title: CSCI-UA.0480 - Homework #3
 	<div class="panel-heading">Homework #3</div>
 	<div class="panel-body" markdown="block">
 
-# Node's HTTP Module, First Express Project, __Due Tues, Feb 23rd__, by 11PM
+# Node's HTTP Module, First Express Project, __Due Friday, Feb 26th, by 11PM__
 
 ## Overview
 
 ### Description
 
-__objects.js__ - Design objects
+__stringy.js__ - Design objects
+
+__testStringy.js__ - Test your work in <code>stringy.js</code>
 
 __demo.js__ - Create a demo site using node's http module.
 
@@ -21,10 +23,10 @@ __test.js__ - Create a browser test page site using Express.
 
 ### Submission Process
 
-You will be given access to a private repository on GitHub. It will contain two files, __demo.js__ and __test.js__.
+You will be given access to a private repository on GitHub. It will contain the following files: __stringy.js__, __testStringy.js__,  __demo.js__ and __test.js__.
 
 * __Push__ your changes to the homework repository on GitHub.
-* Commits later than that date will not be included in grading
+* Commits later than the deadline will not be included in grading
 
 ### (3 points) Make at Least 4 Commits
 
@@ -33,169 +35,298 @@ You will be given access to a private repository on GitHub. It will contain two 
 
 ## Part 1 - Designing Objects 
 
-Design a series of objects to create a computer-controlled Rock Paper Scissors player.
+Design two objects - one that represents a mutable string and a palindrome (a word that is spelled the same backwards and forwards). Create constructors for both objects: <code>MutableString</code> for mutable strings and <code>Palindrome</code> for palindromes. Every <code>Palindrome</code> object should have a <code>MutableString</code> as its prototype.
 
-### Rules
+Read the following for help on creating objects:
 
-* two players simultaneously choose to play rock, paper, or scissors... with paper beating rock, rock beating scissors and scissors betting paper
-* check out [the rules for more details](https://en.wikipedia.org/wiki/Rock-paper-scissors)
+* [slides](http://foureyes.github.io/csci-ua.0480-spring2016-010/slides/06/prototypes.html#/22)
+* [mdn](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain)
+* [chapter 6 in our book](http://eloquentjavascript.net/06_object.html)
 
-### Overview
+### Object Specifications
 
-You'll be creating objects that represent a player. (Note that you're not actually implementing a full game!). The player will be able to:
+In __stringy.js__, create objects, functions and methods that meet the specifications below. You can add as many helper functions or methods as needed. Keep methods on the <code>.prototype</code> property of the appropriate constructor. 
 
-* move (and remember their last move)
-* remember their opponent's moves
+__Remember to add your constructors to module.exports so that they're accessible when you perform a require.__ &rarr;
 
-The player should have:
-
-* a name
-* a list of all of their previous moves
-* a list of all of their opponent's previous moves
-
-__You'll be doing this two ways__
-
-* using inheritance (remember _is-a_ from 101?)
-* using composition (remember _has-a_ from 101?)
-* [more details on composition](https://en.wikipedia.org/wiki/Has-a)
-* You will be creating 4 constructors total, 2 for each version (inheritance and composition)
-
-#### (5 points) Inheritance
-
-__You will create two constructors__ , one for <code>Player</code> and one for <code>HistoryRepeatsItselfPlayer</code>, which inherits from <code>Player</code>. Instances created from <code>Player</code> only play rock. Instances created from <code>HistoryRepeatsItselfPlayer</code> plays based on opponent's previous move, or random if no previous move exists.
-
-
-* read [chapter 6 in {site.book_js}](http://eloquentjavascript.net/06_object.html)
-* pay close attention to the section on [inheritance](http://eloquentjavascript.net/06_object.html#h_/a3bnONnws)
-
-Note the pattern that is used for setting a constructor's prototype property:
-
-<pre><code data-trim contenteditable>MyObj1.prototype = Object.create(MyObj2.prototype);
+<pre><code data-trim contenteditable>module.exports.Palindrome = Palindrome;
+module.exports.MutableString = MutableString;
 </code></pre>
 
-Rather than inheriting from a directly created instance of <code>MyObj2</code>, it creates a fresh object with MyObj2's prototype property (remember, this is the _actual_ property named <code>prototype</code>, of a <code>Function</code> object) as the prototype of <code>MyObj1</code>. 
+#### (15 points) MutableString
 
-This essentially inherits everything defined in <code>MyObj2</code>'s prototype property, which are usually just methods.
+<br>
 
-To inherit the properties set by the constructor, the example shows that <code>MyObj1</code>'s constructor calls its _super_'s constructor:
+<code>MutableString(s)</code> - constructor for <code>MutableString</code> objects
 
-<pre><code data-trim contenteditable>MyObj2.call(this, text);
+A <code>MutableString</code> object is a string that can be modified and added to. __Empty strings are not supported__.
+
+* parameters:
+    * <code>s</code> {string} - string to base this mutable string off of
+* returns: 
+    * {MutableString} a new <code>MutableString</code> object
+* examples:
+    <pre><code data-trim contenteditable>var ms = new MutableString("hello");
 </code></pre>
 
-Since constructors are just functions, you can use <code>call</code>... and pass in <code>this</code> (which is the new instance) as the object that the method is being called on.
+<br>
 
-So, for this part, create two objects, a regular player... that always plays rock, and a smarter player that plays a move that wins based on their opponent's previous move (or plays random if their opponent hasn't moved yet).
+<code>concat(s)</code> - adds a string to this mutable string object
 
-* create a <code>Player</code> constructor
-* it should set the player's name and initialize the Arrays that contain the history of moves (each move represented by R, P, and S)
-* implement the following methods:
-	* <code>move()</code> - generates the next move, saves it in historical moves, and returns it
-		* note that it may be helpful to separate this out into two methods
-		* <code>move</code> - which calls <code>getNextMove</code> __and__ saves it
-		* this will always be rock at first!
-	* <code>recordOpponentMove(opponentMove)</code> - takes in a single argument, and saves that as their opponent's last move
-* create a <code>HistoryRepeatsItselfPlayer</code>
-	* it should _inherit_ from <code>Player</code>
-	* mimic inheritance using the section on [inheritance](http://eloquentjavascript.net/06_object.html#h_/a3bnONnws) referenced earlier
-	* redefine <code>move</code> (and/or <code>getNextMove</code>) so that the move is based off of the opponent's last move
-		* look at the opponent's Array of moves
-		* determine which play will beat the last move
-		* use that as the player's next move
-		* or play random if there are no previous moves from the opponent
-* create an instance of <code>Player</code>
-	* print out that player's name
-	* generate a move and print it out
-	* record paper as the opponent's move
-	* generate another move and print it out
-	* print out all historical moves of the player and their opponent
-* create an instance of <code>HistoryRepeatsItselfPlayer</code>
-	* print out that player's name
-	* generate a move and print it out
-	* record rock as the opponent's move
-	* generate another move and print it out
-	* record paper as the opponent's move
-	* generate another move and print it out
-	* print out all historical moves of the player and their opponent
-* your output should look similar to this:
+* parameters:
+    * <code>s</code> {string} - string to add
+* returns: 
+    * no return value
+* example: 
+    * <pre><code data-trim contenteditable>ms.concat(" world");
+</code></pre>
 
-<pre><code data-trim contenteditable>Normal Nancy
----------
-Nancy always plays rock: R
-Nancy always plays rock, regardless of her opponent's last move: R
-All of Nancy's moves so far:  [ 'R', 'R' ]
-All of her opponent's moves so far:  [ 'P' ]
+<br>
 
-...
+<code>validIndex(i)</code> - determines whether or not index, <code>i</code>, exists with this mutable string.
 
-Timely Tabitha
----------
-Tabitha's first move should be random: S
-If her last opponent's move was rock, she'll play paper: P
-If her last opponent's move was paper, she'll play scissors: S
-All of Tabitha's moves so far:  [ 'S', 'P', 'S' ]
-All of her opponent's moves so far:  [ 'R', 'P' ]
+A valid index is an index from 0 up to the length of the string - 1. __Negative values are also valid indexes.__ -1 is the last character and -length of the string is the first character.
+
+* parameters:
+    * <code>i</code> {number} - the index to check for
+* returns: 
+    * {boolean} 
+* example: 
+    <pre><code data-trim contenteditable>ms = new MutableString("hello");
+ms.validIndex(-5); // --> true (h)
+ms.validIndex(1); // --> true (e)
+ms.validIndex(-7); // --> false (does not exist)
+</code></pre>
+
+<br>
+
+<code>charAt(i)</code> - return the character at index, <code>i</code>.
+
+For positive indexes, 0 is the first character, length of string -1 is the last character. For negative indexes, -1 is the last character and -length of string is the first character. 
+
+If the index doesn't exist, <code>charAt</code> will return <code>undefined</code>
+
+* parameters:
+    * <code>i</code> {number} - the index of the character to retrieve
+* returns: 
+    * {string} - the character at the index specified
+* example: 
+    <pre><code data-trim contenteditable>ms = new MutableString("hello");
+ms.validIndex(-5); // --> h
+ms.validIndex(1); // --> e
+ms.validIndex(-7); // --> undefined
+</code></pre>
+
+<br>
+
+<code>set(i, ch ... i, ch)</code> - sets character at index, <code>i</code>, to string <code>ch</code>.
+
+<code>set can take an arbitrary number of arguments. Every even argument is an index, every odd is the character to set it to. </code>If an index doesn't exist, then the character is not set. If the last argument is only an index (that is, there is no corresponding character), ignore it. Negative indexes are allowed.
+
+* parameters:
+    * <code>i</code> {number} - the index where the new character will be set
+    * <code>ch</code> {string} - the value to set the character to (no validation is required to make sure that <code>ch</code> is only one character long).
+* returns: 
+    * no return value
+* examples: 
+    <pre><code data-trim contenteditable>var ms = new MutableString("hello");
+ms.set(0, "c", -1, "s"); // --> ms will represent "cells"
+var ms = new MutableString("hello");
+ms.set(0, "c", -1); // --> ms will represent "cello" (-1 is ignored)
+var ms = new MutableString("hello");
+ms.set(-100, "c"); // --> ms will represent "hello" (-100 is ignored)
+</code></pre>
+
+<br>
+
+<code>toString()</code> - gives back a "_normal_" string representation of the mutable string.
+
+* parameters:
+    * none
+* returns:
+    * {string} a string that represents the mutable string
+* examples: 
+    <pre><code data-trim contenteditable>var ms = new MutableString("hello");
+console.log(ms.toString()) // --> hello
+</code></pre>
+
+<br>
+
+<code>toCharArray()</code> - gives back an array of string representation of the mutable string. Each element represents a single character in the mutalbe string.
+
+* parameters:
+    * none
+* returns:
+    * {Array} an Array of strings that represents the mutable string
+* examples: 
+    <pre><code data-trim contenteditable>var ms = new MutableString("cat");
+console.log(ms.toCharArray()) // --> ['c', 'a', 't']
 </code></pre>
 
 
-#### (5 points) Composition
+#### (10 points) Palindrome
 
-For this part, instead of creating a hierarchy of types, create a <code>StrategyPlayer</code> object that __has-a__ strategy object as a property. The strategy object that you implement will be <code>LookAtPreviousMoveStrategy</code>.
+<code>Palindrome</code> objects will support all of the same methods that <code>MutableString</code> does (hey - this sounds like _inheritance_). However, there are three major differences:
 
-Composition is basically creating an object that is made up of other objects. For example, in the code below, we have A, which is made up of B and C:
+* the constructor will throw an exception if the string passed in is not the same forward and backwards (not symmetric)
+    * <code>var p = new Palindrome("nope!")</code> - throw an exception
+* <code>set</code> will throw an exception if setting all of the indexes to the characters breaks the symmetry of the palindrome (and no characters will be set)
+    <pre><code data-trim contenteditable>var p = new Palindrome("racecar");
+p.set(-1, "t"); // throws an exception
+</code></pre>    
+* <code>concat</code> will throw an exception if adding the string breaks the symmetry of the palindrome (and nothing will be added)
+    <pre><code data-trim contenteditable>var p = new Palindrome("racecar");
+p.concat("s"); // throws an exception
+</code></pre>    
 
-<pre><code data-trim contenteditable>function A(b, c) {
-	this.b = b;
-	this.c = c;
+#### (5 points) Testing Your Module
+
+Import the module that you created... 
+
+<pre><code data-trim contenteditable>var stringy = require('./stringy.js');
+var MutableString = stringy.MutableString;
+var Palindrome = stringy.Palindrome;
+</code></pre>
+
+And run these tests:
+
+<pre><code data-trim contenteditable>
+console.log("testing MutableString constructor\n-----");
+var s = new MutableString("hello");
+console.log(s.toString());
+
+console.log("\ntesting charAt\n-----");
+console.log(s.charAt(4));
+console.log(s.charAt(-1));
+console.log(s.charAt(-5));
+console.log(s.charAt(-7));
+console.log(s.charAt(7));
+
+console.log("\ntesting toCharArray\n-----");
+console.log(s.toCharArray());
+
+console.log("\ntesting concat\n-----");
+s.concat(" world!");
+console.log(s.toString());
+
+console.log("\ntesting set\n-----");
+s.set(0, 'c');
+console.log(s.toString());
+s.set(-1, '?');
+console.log(s.toString());
+s.set(-100, 'X');
+console.log(s.toString());
+s.set(-1, 'd', -2, 'e', -3, 'k');
+console.log(s.toString());
+s.set(0, 'b', -100, 'X', -101, 'Y', 4, 's', 5 );
+console.log(s.toString());
+
+
+console.log("\ntesting Palindrome constructor\n-----");
+var p1 = new Palindrome('minim');
+console.log(p1.toString());
+
+console.log("\ntesting charAt\n-----");
+console.log(p1.charAt(0));
+console.log(p1.charAt(-1));
+
+console.log("\ntesting set\n-----");
+p1.set(1, 'a', 2, 'd', 3, 'a');
+console.log(p1.toString());
+
+console.log("\ntesting set with exception\n-----");
+try {
+  p1.set(0, 1);
+} catch(e) {
+  console.log('exception caught: ' + e.message);
 }
 
-A.prototype.foo = function() {
-	this.b.bar();
-	this.c.qux();
+console.log("\ntesting toCharArray\n-----");
+console.log(p1.toCharArray());
+
+console.log("\ntesting concat\n-----");
+p1.concat('imadam');
+console.log(p1.toString());
+
+console.log("\ntesting concat exception:\n-----");
+try {
+  p1.concat('!');
+} catch(e) {
+  console.log('exception caught: ' + e.message);
 }
 
-function B() {}
-B.prototype.bar = function() { console.log('bar');}
-
-function C() {}
-C.prototype.qux = function() { console.log('qux');}
-
-obj = new A(new B(), new C());
-obj.foo();
+console.log("\ntesting constructor exception\n-----");
+try {
+  var p2 = new Palindrome('car');
+} catch(e) {
+  console.log('Exception caught: ' + e.message);
+}
 </code></pre>
 
-__You will create two constructors__, one for <code>StrategyPlayer</code>, which can make an instance  that has a move and recordOpponentMove...  and another constructor for <code>LookAtPreviousMoveStrategy</code>, which is an object that encapsulates the logic for making the next move. <code>StrategyPlayer</code> will have an instance of <code>LookAtPreviousMoveStrategy</code> (hint: pass in the strategy object instance in the constructor and assign - see examples above) that it will use whenever it needs to make a move.
+The resulting output should be:
 
-* for this version, create a <code>StrategyPlayer</code> constructor
-	* it should set the object's name
-	* ...and it's strategy (an object passed in to the constructor)
-	* of course, it will also initialize the histories of the player's moves and the opponent's moves
-* define the <code>recordOpponentMove</code> method
-* define the <code>move</code> method... the move method should rely on the strategy object (see below) to determine what the next move should be
-* create a <code>LookAtPreviousMoveStrategy</code> constructor...
-	* it should have a <code>getNextMove</code> method that takes an <code>Array</code> of moves...
-	* takes the last move
-	* and returns R, P or S based on which one will beat the last move
-	* or random if no previous opponent moves
-* create an instance of <code>StrategyPlayer</code> (pass in a name, and an instance of <code>LookAtPreviousMoveStrategy</code>)
-	* print out that player's name
-	* generate a move and print it out
-	* record rock as the opponent's move
-	* generate another move and print it out
-	* record paper as the opponent's move
-	* generate another move and print it out
-	* print out all historical moves of the player and their opponent
-* example output below:
+<pre><code data-trim contenteditable>
+testing MutableString constructor
+-----
+hello
 
+testing charAt
+-----
+o
+o
+h
+undefined
+undefined
 
-<pre><code data-trim contenteditable>Previous Patty
----------
-Tabitha's first move should be random: R
-If her last opponent's move was rock, she'll play paper: P
-If her last opponent's move was paper, she'll play scissors: S
-All of Tabitha's moves so far:  [ 'R', 'P', 'S' ]
-All of her opponent's moves so far:  [ 'R', 'P' ]
+testing toCharArray
+-----
+[ 'h', 'e', 'l', 'l', 'o' ]
+
+testing concat
+-----
+hello world!
+
+testing set
+-----
+cello world!
+cello world?
+cello world?
+cello worked
+bells worked
+
+testing Palindrome constructor
+-----
+minim
+
+testing charAt
+-----
+m
+m
+
+testing set
+-----
+madam
+
+testing set with exception
+-----
+exception caught: Result from set is not symmetric
+
+testing toCharArray
+-----
+[ 'm', 'a', 'd', 'a', 'm' ]
+
+testing concat
+-----
+madamimadam
+
+testing concat exception:
+-----
+exception caught: Result from concatentation is not symmetric
+
+testing constructor exception
+-----
+Exception caught: Palindrome not symmetric
 </code></pre>
-
 
 ## Part 2 - Demo Site
 

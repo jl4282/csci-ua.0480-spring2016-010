@@ -13,9 +13,6 @@
 </td>
 	<td markdown="block">
 
-Due Feb 16th (Tu)
-
-* to be posted Wednesday afternoon
 
 <!--
 * [](assignments/.html)
