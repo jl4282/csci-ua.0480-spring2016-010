@@ -27,8 +27,10 @@
 </td>
 	<td markdown="block">
 
+{% comment %}
 Due October 13th
 
 * [Homework #4](homework/04.html)
+{% endcomment %}
 
 </td>

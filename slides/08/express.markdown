@@ -507,11 +507,6 @@ There are many templating solutions that we can use, both on the server side and
 * __jade__ comes with express, and it has a meta language for writing html!
 * __handlebars__ is based off of a basic templating language called mustache
 
-<br>
-In fact, there are so many to choose from, that there's an entire [single serving site](http://garann.github.io/template-chooser/) devoted to picking one!
-
-(Oh yeah... note that it's hosted on GitHub, probably using GitHub Pages)
-{:.fragment}
 </section>
 
 <section markdown="block">

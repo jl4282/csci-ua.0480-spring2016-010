@@ -114,9 +114,7 @@ introduce nodemon!
 {% endcomment %}
 
 </td>
-{% comment %}
 {% include schedule/09.markdown %}
-{% endcomment %}
 <td></td><td></td><td></td>
 </tr>
 
@@ -133,10 +131,7 @@ introduce nodemon!
 * Using GET / Review
 {% endcomment %}
 </td>
-{% comment %}
 {% include schedule/10.markdown %}
-{% endcomment %}
-<td></td><td></td><td></td>
 </tr>
 
 
