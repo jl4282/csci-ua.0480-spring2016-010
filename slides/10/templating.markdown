@@ -49,8 +49,33 @@ __Using a templating engine that's decoupled from your application's logic is us
 * most templating engines are featureful... providing conveniences such as automatic character escaping (why is this important? __Let's check out a _bad_ form.__)
 </section>
 
+
+<section markdown="block">
+## Installation
+
+Following the book? (thumbs up!)
+
+<pre><code data-trim contenteditable>
+npm install express-handlebars --save
+</code></pre>
+
+However... the official __express generator__ (cli app that creates some scaffolding for you) uses another module:
+
+<pre><code data-trim contenteditable>
+npm install hbs --save
+</code></pre>
+</section>
 <section markdown="block">
 ## Setup
+
+Using hbs:
+
+<pre><code data-trim contenteditable>
+// super simple
+app.set('view engine', 'hbs');
+</code></pre>
+
+Using Express handlebars
 
 <pre><code data-trim contenteditable>
 var handlebars = require('express-handlebars')
@@ -61,6 +86,26 @@ app.set('view engine', 'handlebars');
 </code></pre>
 </section>
 
+<section markdown="block">
+## Locations and Names
+
+__Note that the directory structure is slightly different depending on what library to use.__ &rarr;
+
+hbs
+
+<pre><code data-trim contenteditable>
+views/layout.hbs
+views/index.hbs
+</code></pre>
+
+express-handlebars
+
+<pre><code data-trim contenteditable>
+views/layout/main.handlebars
+views/index.hbs
+</code></pre>
+
+</section>
 <section markdown="block">
 ## Context Objects
 
@@ -198,6 +243,7 @@ You probably have spaces in your <code>{{ #helper }}</code>.
 [Check out the docs for more block helpers!](http://handlebarsjs.com/block_helpers.html)
 </section>
 
+<!--
 <section markdown="block">
 ## Oh Yes...
 
@@ -211,3 +257,4 @@ var handlebars = require('express-handlebars')
 	.create({defaultLayout:'main'});
 </code></pre>
 </section>
+-->
