@@ -146,10 +146,7 @@ introduce nodemon!
 * Go over checkboxes
 {% endcomment %}
 </td>
-{% comment %}
 {% include schedule/11.markdown %}
-{% endcomment %}
-<td></td><td></td><td></td>
 </tr>
 
 
