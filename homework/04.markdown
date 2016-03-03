@@ -175,7 +175,7 @@ __Test your page.__
 ![list](../resources/img/hw04_03_list.png)
 </div>
 
-### (6 points) Filter by Subway Line
+### (7 points) Filter by Subway Line
 
 __Once you have your list of complaints working... add a form that allows you to filter by subway line.__ &rarr;
 
@@ -216,7 +216,7 @@ req.body: {}
 
 ## Part 4 - Adding a Complaint
 
-### (8 points) Create a Complaint Form
+### (9 points) Create a Complaint Form
 
 * in __app.js__ create a new route handler and template for <code>/complain</code>
     * add a form in your template
@@ -292,7 +292,7 @@ __Modify your add route (<code>/complain</code>) so that every time a user adds 
 * otherwise, the count should start at 0
 
 
-### (6 points) The Stats Page
+### (5 points) The Stats Page
 
 
 * create a route handler for <code>/stats</code>

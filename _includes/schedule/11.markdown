@@ -26,7 +26,7 @@ Mongoose
 </td>
 	<td markdown="block">
 
-Due Mar 8th (Mon)
+Due Mar 7th (Mon)
 
-* [Homework #04](assignments/04.html)
+* [Homework #04](homework/04.html)
 </td>
