@@ -34,7 +34,7 @@ __What are some downsides to storing data as part of our application in memory?_
 __What are some other options... let's list as many as we can.__ &rarr;
 
 * {:.fragment} on the filesystem
-* {:.fragment} _in the cloud_ (S3, firebase, parse, SalesForce)
+* {:.fragment} _in the cloud_ (S3, firebase, <strike>parse</strike>, SalesForce)
 * {:.fragment} in a database
 
 <br>
@@ -95,7 +95,8 @@ __Regarding additional relational database features...__ &rarr;
 	* {:.fragment} highly structured
 	* {:.fragment} you have to define what columns (as well as their types) are in a table before inserting rowss
 	* {:.fragment} has a lot of features to retain _data integrity_ (such user defined data constraints, foreign keys, etc.)
-* {:.fragment} some relational databases guarantee that transactions (or changes in the database) are reliable (see [acid compliance]())
+* {:.fragment} some relational databases guarantee that transactions (or changes in the database) are reliable 
+* {:.fragment} see [ACID compliance](https://en.wikipedia.org/wiki/ACID) - Atomicity, Consistency, Isolation, Durability
 * {:.fragment} [this database consultant has a pretty good write-up on relational databases](http://r937.com/relational.html)
 
 </section>
@@ -156,7 +157,7 @@ We'll focus on __key-value__ and __document stores__...
 <section markdown="block">
 ## Key Value Store
 
-Probably the most simple conceptually... data is stored in key/value pairs. __This should sound similar to some data structure data structures that you've seen before.__ &rarr;
+Probably the most simple conceptually... data is stored in key/value pairs. __This should sound similar to some data structures that you've seen before.__ &rarr;
 
 * {:.fragment} maybe a hash
 * {:.fragment} or a dictionary
