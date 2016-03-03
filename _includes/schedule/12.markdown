@@ -16,7 +16,9 @@
 -->
 </td>
 	<td markdown="block">
-<!--
-* [](assignments/.html)
--->
+
+Midterm Practice
+
+* [midterm practice](resources/handouts/midterm/midterm_1_practice.pdf)
+* [midterm practice solutions](resources/handouts/midterm/midterm_1_practice_solutions.pdf)
 </td>

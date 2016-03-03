@@ -22,9 +22,11 @@ title: "About Class #12"
 <section markdown="block">
 ## Midterm
 
-* coming up next week, Thursday, October 22nd
+* coming up next week, Thursday, March 10th
 * (see schedule)
 * in-class review on Tuesday
-* sample questions posted this evening
+* sample questions posted 
+    * [midterm practice](../../resources/handouts/midterm/midterm_1_practice.pdf)
+    * [midterm practice solutions](../../resources/handouts/midterm/midterm_1_practice_solutions.pdf)
 </section>
 
