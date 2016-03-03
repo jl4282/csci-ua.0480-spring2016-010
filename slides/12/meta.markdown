@@ -14,9 +14,10 @@ title: "About Class #12"
 <section markdown="block">
 ## Topics
 
+* Homework
 * Midterm coming up in a week!
 * MongoDB
-* Mongoose
+* (maybe???) Mongoose
 </section>
 
 <section markdown="block">
