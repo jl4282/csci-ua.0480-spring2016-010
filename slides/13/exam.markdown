@@ -11,15 +11,36 @@ title: "About the Exam, Review"
 </section>
 
 <section markdown="block">
+## First...
+
+This goes without saying, but __please prepare adquately for the exam__:
+
+* it's definitely not super _difficult_ 
+* but it's also not _easy_
+
+<br> 
+
+If you're a graduating senior... or if you're a major that __needs__ a particular grade in this elective, __you know what you have to do!__
+
+* I've had issues in the past regarding both situations!
+* don't be that person
+
+<br> 
+
+Ask me any questions if you have any concerns - in class or via email. For office hours today, I'll be around at 3:15 instead for of 12:30 due to committee meeting.
+
+
+</section>
+<section markdown="block">
 ## Exam Details
 
-* __10/22__
+* __4/10__
 
 * in this room, {{ site.course_room }}
-* during regular class time (9:30-10:45am)
+* during regular class time (11:00-12:15am)
 * please come on time to get full amount of time for exam
 * pen/pencil and paper, no laptops
-* some notes will be provided (just a list of String, Array, Request and Response methods and properties, similar to notes in practice questions)
+* some notes will be provided (just a list of String, Array, Request and Response methods and properties)
 </section>
 
 <section markdown="block">
@@ -46,20 +67,11 @@ The material for the exam will come from:
 * exceptions (these will __not__ be on the exam):
 	* Static Sites, Remote Server (using ssh, scp, etc.)
 	* Forms Revisted (using _other_ form elements)
-	* Parameters from URLs (extracting values from url paths)
-	* Mongoose slides on updating and inserting (though finding/reading was covered, so it'll be on the exam)
 * note that you can append a ?print-pdf to the end of the url for a printable version (the formatting is slightly off, though)
 * for example:[http://foureyes.github.io/csci-ua.0480-fall2015-001/slides/09/request-response.html?print-pdf#/](http://foureyes.github.io/csci-ua.0480-fall2015-001/slides/09/request-response.html?print-pdf#/)
 </section>
 
 
-<section markdown="block">
-## Errors on Slides
-
-* reduce implementation
-* coercion on slides
-
-</section>
 <section markdown="block">
 ## Will Not Be on Exam
 

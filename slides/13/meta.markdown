@@ -16,8 +16,8 @@ title: "About Class #13"
 
 I'll keep today's class fairly open ended, so we can discuss:
 
-* questions about the midterm exam (10/21)
-* questions about homework #4 (due tonight, though we can talk about extending through tomorrow)
+* questions about the midterm exam ()
+* questions about homework #4 (due yesterday, but???)
 
 Otherwise, I'll reinforce the topics that we went skimmed through last week:
 
@@ -28,29 +28,37 @@ Otherwise, I'll reinforce the topics that we went skimmed through last week:
 </section>
 
 <section markdown="block">
-## Homework 
-
-Homework #4 is __due tonight, 10/16__. __How is everyone doing with it?__ &rarr;
-</section>
-
-<section markdown="block">
 ## Midterm Exam 
 
-The midterm is next Tuesday, __10/21__:
 
-* it's in class, so please come on time
 * I'll discuss format and topics later today
 * I've posted some [sample midterm questions](../../resources/handouts/midterm/midterm_sample_questions.pdf)
-* (solutions will be posted this evening)
 </section>
 
 <section markdown="block">
-## Out-of-class Review Sessions
+## Homework #02
 
-* I will be holding a review on Monday from 2:00 to 3:30pm in room WWH 905 (tentative location)
-	* let me know if you're coming 
-	* ... and what topics you're interested in
-* I also have office hours...
-	* today, Thursday, from 11:00 to 1:00pm
-	* next week Monday, from 11:00 to 12:00pm
+Nice work!
+
+* __read the comments in the grader feedback!__ 
+
+Some common errors:
+
+* should have implemented your own every and some
+* flatten required the use of reduce
+* use ===
+* use var
+* avoid using magic numbers (why use number, when you can use key/name!)
+</section>
+
+<section markdown="block">
+## Homework #03
+
+* don’t fake results of curl!
+* watch out for relative vs absolute urls in links
+* q's abt objects / prototypes?
+* res.render’s second arg - keys are template vars
+* redirect to same domain (when to include domain) 
+* styling 404
+* no weirdo 'shops
 </section>

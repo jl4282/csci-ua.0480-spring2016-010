@@ -2,7 +2,9 @@
 
 Slides
 
+* [About Class #13 / Homework?](slides/13/meta.html)
 * [About the Midterm](slides/13/exam.html)
+
 
 Sample Questions for Midterm
 
@@ -20,8 +22,10 @@ Sample Questions for Midterm
 <!--
 * [](assignments/.html)
 -->
+{% comment %}
 Due October 27th
 
 * [Homework #5](homework/05.html)
+{% endcomment %}
 
 </td>

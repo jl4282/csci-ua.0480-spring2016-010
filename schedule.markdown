@@ -166,10 +166,7 @@ introduce nodemon!
 <td markdown="block">
 * About the Exam, Review
 </td>
-{% comment %}
 {% include schedule/13.markdown %}
-{% endcomment %}
-<td></td><td></td><td></td>
 </tr>
 
 
