@@ -298,8 +298,6 @@ __Modify your add route (<code>/complain</code>) so that every time a user adds 
 * create a route handler for <code>/stats</code>
 * create a template for it
 * display the session variable that represents the current count of the user's complaint submssions
-
-* the settings page should field <code>GET</code> requests on the path, <code>/settings</code>
 * the page should look like:
 
 <div markdown="block" class="img">
