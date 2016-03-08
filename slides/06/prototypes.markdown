@@ -421,7 +421,7 @@ console.log(a.constructor); // [Function: Array]
 So we should probably set that on our child constructor's prototype property explicitly so that all objects created from <code>SpaceWerewolf</code> have that as its constructor.
 
 <pre><code data-trim contenteditable>
-SpaceWerewolf.constructor.prototype = SpaceWerewolf;
+SpaceWerewolf.prototype.constructor = SpaceWerewolf;
 </code></pre>
 </section>
 
@@ -443,7 +443,7 @@ function SpaceWerewolf(mood) {
     Werewolf.call(this, mood);
 }
 SpaceWerewolf.prototype = Object.create(Werewolf.prototype);
-SpaceWerewolf.constructor.prototype = SpaceWerewolf;
+SpaceWerewolf.prototype.constructor = SpaceWerewolf;
 
 var w = new SpaceWerewolf('in space');
 console.log(w.mood);
@@ -471,7 +471,7 @@ function Werewolf(mood) {
 }
 
 Werewolf.prototype = Object.create(Monster.prototype);
-Werewolf.prototype.constructor = Constructor;
+Werewolf.prototype.constructor = Werewolf;
 </code></pre>
 
 <pre><code data-trim contenteditable>
