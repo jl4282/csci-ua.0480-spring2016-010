@@ -200,10 +200,7 @@ MIDTERM
 * validation comes from next class?
 {% endcomment %}
 </td>
-{% comment %}
 {% include schedule/15.markdown %}
-{% endcomment %}
-<td></td><td></td><td></td>
 </tr>
 
 
