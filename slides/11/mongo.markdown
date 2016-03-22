@@ -575,7 +575,7 @@ __As with our previous templates, we'll just loop through all of the objects tha
 &lt;ul&gt;
 {{"{{#each cats"}}}}
 &lt;li&gt;{{"{{name"}}}}</li>
-{"{{{/each"}}}}
+{{"{{/each"}}}}
 &lt;/ul&gt;
 </code></pre>
 {:.fragment}

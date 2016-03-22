@@ -1,7 +1,13 @@
 	<td markdown="block">
 
-* Exam Grades by Thursday, Homework, Evaluation
-* Review Databases...
+* Exam Grades by Thursday
+* Homework 
+* Final Project
+* Evaluation
+* Review Databases (see class 11 and 12)
+
+(Maybe)
+
 * [Routers, and Project/Directory Layout](slides/15/layout.html)
 * [Parameters from URLs](slides/15/params.html)
 * [Mongoose](slides/15/mongoose.html)
