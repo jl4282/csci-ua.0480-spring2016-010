@@ -21,7 +21,8 @@
 -->
 </td>
 	<td markdown="block">
-<!--
-* [](assignments/.html)
--->
+
+Due Mar 29th (Tue)
+
+* [Homework #04](homework/04.html)
 </td>
