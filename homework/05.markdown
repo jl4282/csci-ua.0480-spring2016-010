@@ -35,10 +35,7 @@ You'll have two pages:
 
 You will be given access to a private repository on GitHub. 
 
-The final version of your assignment should be in GitHub, but a submission should still be sent via NYU Classes.
-
 * __Push__ your changes to the homework repository on GitHub.
-* Add the URL of the repository to your assignment submission in NYU Classes.
 
 ### (3 points) Make at Least 4 Commits
 
