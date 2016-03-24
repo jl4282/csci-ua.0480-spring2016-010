@@ -185,7 +185,7 @@ router.get(/class\d\d/, function(req, res) {
 <section markdown="block">
 ## Regular Expressions Continued
 
-__What path you specify in your router to make all of these URLs match?__ &rarr;
+__What path would you specify in your router to make all of these URLs match?__ &rarr;
 
 * /jam
 * /jem

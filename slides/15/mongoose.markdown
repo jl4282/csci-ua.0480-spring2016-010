@@ -104,7 +104,10 @@ Static Methods
 
 To add extra features to your schemas, you can use plug-ins.
 
-One plug-in, mongoose-url-slugs... can be used to generate a __slug__ (human readable string that's unique for each document) for all of your objects.
+One plug-in, mongoose-url-slugs... 
+
+* can be used to generate a __slug__ (human readable string that's unique for each document) for all of your objects
+* __without having to manually specify slug in the schema!__
 </section>
 
 <section markdown="block">
@@ -137,10 +140,11 @@ Make sure that you have the required modules for connecting to the database... a
 
 <br>
 <pre><code data-trim contenteditable>
-// npm install --save mongoose mongoose-url-slugs
+npm install --save mongoose mongoose-url-slugs
 </code></pre>
 
 Require and connect...
+
 <pre><code data-trim contenteditable>
 var mongoose = require('mongoose'),
 	URLSlugs = require('mongoose-url-slugs');
@@ -154,9 +158,23 @@ mongoose.connect('mongodb://localhost/pizzadb');
 </section>
 
 <section markdown="block">
+## Types / Embedded Documents
+
+* one way to define relationships is to __embed__ one document in another... 
+    * for example, this specifies that field Foo contains an Array / list of Bar objects
+    * Foo: [Bar]
+* additionally, instead of specifying the type outright, you can use an object that defines some field specifications:
+    * type
+    * max
+    * min
+    * required
+    * default (for default value)
+</section>
+<section markdown="block">
 ## Your Schema
 
 Schemas represent collections (tables). Notice the different ways of specifying the type of a field:
+
 
 <pre><code data-trim contenteditable>
 var Topping = new mongoose.Schema({
@@ -170,7 +188,9 @@ var Pizza = new mongoose.Schema({
 	toppings: [Topping]
 });
 
-// before registering model!
+// note that we left out slug from the schema... 
+// (the plugin will add it for you!)
+// this should go before registering model!
 Pizza.plugin(URLSlugs('size crust'));
 </code></pre>
 </section>
@@ -211,16 +231,21 @@ pizza1.save(function(err, pizza, count) {
 <section markdown="block">
 ## Finding / Retrieving
 
+Ok... just like the commandline client, we can use __find__:
+
 <pre><code data-trim contenteditable>
 // find all (try with query/criteria)
 Pizza.find(function(err, pizzas, count) {
 	console.log(err, pizzas, count);
 });
 </code></pre>
+
+Notice that we get back an Array!
 </section>
 <section markdown="block">
 ## Finding Only One!
 
+__But I only want one!__ Sometimes it's annoying to have to index into an Array if you only want one of something, so there's also __findOne__ &rarr;
 <pre><code data-trim contenteditable>
 // find only one (returns first)
 Pizza.findOne({slug: 'small-2' }, function(err, pizza, count) {
@@ -232,9 +257,11 @@ Pizza.findOne({slug: 'small-2' }, function(err, pizza, count) {
 <section markdown="block">
 ## Finding Then Updating
 
+In Mongoose... instead of using the push operator (like in the commandline client), we have a method, __push__, that can be called on a property if it represents a list / Array of embedded values:
 <pre><code data-trim contenteditable>
 // update one after finding (hello callbacks!)
 Pizza.findOne({slug: 'small-2' }, function(err, pizza, count) {
+    // we can call push on toppings!
 	pizza.toppings.push({name: 'mushroom'});
 	pizza.save(function(saveErr, savePizza, saveCount) {
 		console.log(savePizza);	
@@ -245,6 +272,8 @@ Pizza.findOne({slug: 'small-2' }, function(err, pizza, count) {
 
 <section markdown="block">
 ## Finding Then Updating Take Two
+
+But of course... we can _actually_ use push in an update query. In this case, we're using __findOneAndUpdate__ to do the find and update all at once!
 
 <pre><code data-trim contenteditable>
 // find one and update it; maybe better than previous?
@@ -257,6 +286,8 @@ Pizza.findOneAndUpdate({slug:'small-2'}, {$push: {toppings: {name:'peppers'}}}, 
 <section markdown="block">
 ## Finding by Embedded Documents
 
+We can also adjust our query to find by an embedded document. In this case, we use the property of the list of embedded documents... and use another object that describes the embedded document that we'd like to match.
+
 <pre><code data-trim contenteditable>
 Pizza.find({toppings: {name:'mushroom'}}, function(err, pizzas, count) {
 	console.log(pizzas);
@@ -266,7 +297,8 @@ Pizza.find({toppings: {name:'mushroom'}}, function(err, pizzas, count) {
 <section markdown="block">
 ## Finding and Updating Multiple Embedded Documents
 
-(whew!)
+Notice that when we update an embedded document, before we save the parent, we have to let mongoose know that we made changes to embedded documents. (shrug)
+
 <pre><code data-trim contenteditable>
 Pizza.findOne({slug:'small-2'}, function(err, pizza, count) {
 	for (var i = 0; i < pizza.toppings.length; i++) {
@@ -277,6 +309,7 @@ Pizza.findOne({slug:'small-2'}, function(err, pizza, count) {
 		console.log(err, modifiedPizza);
 	});
 });
-
 </code></pre>
+
+(whew!) 
 </section>

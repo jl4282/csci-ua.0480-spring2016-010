@@ -209,14 +209,11 @@ MIDTERM
 <td markdown="block">
 {% comment %}
 * add references! for schema design...different ways of nesting
-{% endcomment %}
 * Schema Design
+{% endcomment %}
 * Authentication
 </td>
-{% comment %}
 {% include schedule/16.markdown %}
-{% endcomment %}
-<td></td><td></td><td></td>
 </tr>
 
 
