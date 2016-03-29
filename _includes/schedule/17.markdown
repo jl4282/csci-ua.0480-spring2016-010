@@ -33,7 +33,10 @@ Solution Sets
 * [HTML and CSS from shayhowe.com](http://learn.shayhowe.com/html-css/getting-to-know-html/)
 </td>
 	<td markdown="block">
-Due November 10th
 
+* Homework #6 to be posted
+
+{% comment %}
 * [Homework #6](homework/06.html)
+{% endcomment %}
 </td>
