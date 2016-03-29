@@ -223,10 +223,7 @@ MIDTERM
 * HTML Primer, JavaScript and the Browser
 * The Document Object Model
 </td>
-{% comment %}
 {% include schedule/17.markdown %}
-{% endcomment %}
-<td></td><td></td><td></td>
 </tr>
 
 

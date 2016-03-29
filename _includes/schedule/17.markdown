@@ -2,6 +2,7 @@
 
 Slides
 
+{% comment %}
 * [About Class #17](slides/17/meta.html)
 	* nodemon demo
 	* checkboxes and hidden inputs
@@ -9,14 +10,16 @@ Slides
 	* quiz demo
 	* final projects
 	* midterm
+{% endcomment %}
+* see previous class on authentication
 * [HTML Primer, JavaScript and the Browser](slides/17/javascript-browser.html)
 * [The Document Object Model](slides/17/dom.html)
 * [DOM Continued](slides/17/dom-continued.html)
 
 Solution Sets
-
-* [Midterm Solutions](resources/handouts/midterm/midterm_solutions.pdf)
-* [Midterm Solutions (Alternate)](resources/handouts/midterm/midterm_alt_solutions.pdf)
+ 
+* [Midterm Solutions](resources/handouts/midterm/midterm_coffee_solutions.pdf)
+* [Midterm Solutions (Alternate)](resources/handouts/midterm/midterm_nomoji_solutions.pdf )
 
 <!-- 
 * [](slides//.html)
