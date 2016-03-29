@@ -187,7 +187,9 @@ var Pizza = new mongoose.Schema({
 	crust: String,
 	toppings: [Topping]
 });
+</code></pre>
 
+<pre><code data-trim contenteditable>
 // note that we left out slug from the schema... 
 // (the plugin will add it for you!)
 // this should go before registering model!
