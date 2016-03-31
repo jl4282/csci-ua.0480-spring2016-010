@@ -233,10 +233,7 @@ MIDTERM
 * DOM Continued
 * Attributes 
 </td>
-{% comment %}
 {% include schedule/18.markdown %}
-{% endcomment %}
-<td></td><td></td><td></td>
 </tr>
 
 
