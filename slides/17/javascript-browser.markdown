@@ -321,7 +321,7 @@ Note that:
 <section markdown="block">
 ## Script Tags, JavaScript in Attributes
 
-You can specify script the externally using the src attribute
+You can specify an external script by using the src attribute in the <code>script</code> tag
 
 <pre><code data-trim contenteditable>
 &lt;script src="main.js"&gt; &lt;/script&gt;
@@ -357,7 +357,7 @@ __do you think is the recommended method for integrating JavaScript code and why
 <section markdown="block">
 ## Using External JavaScript
 
-Generally, the most accepted way of integrating JavaScript is using external JavaScript files. This is because external JavaScript files
+The most commonly accepted best practice for integrating JavaScript is using external JavaScript files. This is because external JavaScript files
 
 * {:.fragment} help separate content from style from functionality
 * {:.fragment} encourage code reuse
@@ -394,7 +394,7 @@ __What are some other things that we can do with our external JavaScript to make
 * {:.fragment} compress our external JavaScript
 * {:.fragment} lastly, script tags in HTML5 may have:
 	* {:.fragment} an __async__ attribute which signals to the browser that the script does not have to be blocking; it can be downloaded asynchronously
-	* {:.fragment} a __defer__ attribute - tells the browser that the script can be downloaded and run after the 
+	* {:.fragment} a __defer__ attribute - tells the browser that the script can be downloaded and run after the page has been parsed
 
 <pre><code data-trim contenteditable>
 &lt;script defer async src="main.js"&gt; &lt;/script&gt;
@@ -409,11 +409,12 @@ __What are some other things that we can do with our external JavaScript to make
 As we've discussed in the past, JavaScript is based on a standard called [ECMAScript](http://www.ecma-international.org/ecma-262/5.1/)
 
 * as of 2012, all modern browsers fully support ECMAScript 5.1
-* some modern browsers already support some features of an upcoming version of the standard, ECMAScript 6
+* some modern browsers already support some features of an upcoming version of the standard, ECMAScript 6 (ES 6)
 	* some improvements include:
-	* additions to the standard library (adding methods such as find, fill())
+	* additions to the standard library (for example, adding  Array methods like find() and fill())
 	* new objects, such as Set and Map
-	* default parameters for functions
+    * syntactic sugar (for example class style definitions for inheritance)
+	* default parameters for functions (like Python keyword arguments)
 	* [and others](https://developer.mozilla.org/en-US/docs/Web/JavaScript/New_in_JavaScript/ECMAScript_6_support_in_Mozilla)
 * older browsers support at least ECMAScript 3  
 </section>

@@ -13,7 +13,7 @@ title: "The Document Object Model"
 <section markdown="block">
 ## Data Structures!
 
-__If you were tasked with writing an rendering engine for a browser, what kind of data structure would you use to represent an HTML document in your program?__ &rarr;
+__If you were tasked with writing a rendering engine for a browser, what kind of data structure would you use to represent an HTML document in your program?__ &rarr;
 
 (maybe you're planning on building your own in [Swift](http://www.screaming.org/blog/2014/08/15/lets-build-a-browser-engine-in-swift/) or [Rust](http://limpet.net/mbrubeck/2014/08/08/toy-layout-engine-1.html))
 
