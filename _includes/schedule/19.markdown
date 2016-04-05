@@ -23,7 +23,11 @@
 * [HTML and CSS from shayhowe.com](http://learn.shayhowe.com/html-css/getting-to-know-html/)
 </td>
 	<td markdown="block">
-Due Tuesday, November 17th
+Due Tuesday, April 12th
 
-* [Homework #7](homework/07.html)
+* [Homework #6](homework/06.html)
+
+Due Thursday, April 14th
+
+* Project 2 Milestone 
 </td>

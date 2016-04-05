@@ -185,16 +185,20 @@ __What's peculiar about the way they're named and the values that they're given?
 __Check boxes__ allow you to choose __multiple__ values from a set of values. They're &lt;input&gt; elements with a type of <code>checkbox</code>.
 
 <pre><code data-trim contenteditable>
-&lt;label&gt;Checkbox 1&lt;/label&gt;&lt;input type="checkbox" name="checkboxExample" value="1"&gt;
-&lt;label&gt;Checkbox 2&lt;/label&gt;&lt;input type="checkbox" name="checkboxExample" value="2"&gt;
-&lt;label&gt;Checkbox 3&lt;/label&gt;&lt;input type="checkbox" name="checkboxExample" value="3"&gt;
+&lt;label&gt;Checkbox 1&lt;/label&gt;
+&lt;input type="checkbox" name="checkboxExample" value="1"&gt;
+&lt;label&gt;Checkbox 2&lt;/label&gt;
+&lt;input type="checkbox" name="checkboxExample" value="2"&gt;
+&lt;label&gt;Checkbox 3&lt;/label&gt;
+&lt;input type="checkbox" name="checkboxExample" value="3"&gt;
 </code></pre>
 
-* __all check boxes within a group of check boxes should have the same name__
-* you can use the <code>checked</code> attribute to have a check box checked off by default 
+* __check boxes within a group should have the same name__
+* to default to checked, add a <code>checked</code> attribute to the tag
 * each checkbox in a group of check boxes has its own value
 * __all values of the items checked are sent to the server__ (__how do you think they're represented?__ &rarr;)
 * {:.fragment} ...as an array! (or as a single value if only one item checked)
+* {:.fragment} if the frst two were checked, <code>req.body.checkboxExample</code> &rarr; <code>[1, 2]</code>
 </section>
 
 <section markdown="block">

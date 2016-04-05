@@ -246,10 +246,7 @@ MIDTERM
 * Events 
 * JavaScript Timers
 </td>
-{% comment %}
 {% include schedule/19.markdown %}
-{% endcomment %}
-<td></td><td></td><td></td>
 </tr>
 
 <!-- ------------ --><a name="20"></a>
