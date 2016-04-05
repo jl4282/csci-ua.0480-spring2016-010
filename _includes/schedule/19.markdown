@@ -1,4 +1,12 @@
 	<td markdown="block">
+* homework
+    * extra credit
+* final project
+    * milestone
+    * reference source material (tutorials)
+    * (even if it's just slides or old homework!)
+    * write your own code / academic integrity
+* go back over DOM slides
 * [Modifying and Adding Elements](slides/19/modifying-creating.html)
 * [Layout and Style](slides/19/layout-style.html)
 * [JavaScript Timers](slides/19/timers.html)
