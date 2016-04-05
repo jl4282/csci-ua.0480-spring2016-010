@@ -31,6 +31,12 @@
 * [HTML and CSS from shayhowe.com](http://learn.shayhowe.com/html-css/getting-to-know-html/)
 </td>
 	<td markdown="block">
+
+In class activity
+
+* [Form to submit talksAbout function](https://docs.google.com/a/nyu.edu/forms/d/1bqPF8NaUAj1AtVwEcnWnEoaeriOU6MWRmTPpZ0BuGR0/viewform)
+* [Instructions / slides](slides/17/dom.html#/14)
+
 Due Tuesday, April 12th
 
 * [Homework #6](homework/06.html)

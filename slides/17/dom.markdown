@@ -211,7 +211,7 @@ __And... let's see what these look like.__ &rarr;
 <section markdown="block">
 ## An Exercise
 
-Write a function called <code>talksAbout</code>.
+[Write a function](https://docs.google.com/a/nyu.edu/forms/d/1bqPF8NaUAj1AtVwEcnWnEoaeriOU6MWRmTPpZ0BuGR0/viewform) called <code>talksAbout</code>. Test on this [markup](https://gist.github.com/foureyes/bf13be6e98f1bf0211652a74ba2e4870).
 
 * two parameters, a node to search in, and a string to look for 
 * returns true if it finds the string anywhere within the node or the node's children
@@ -221,6 +221,9 @@ Write a function called <code>talksAbout</code>.
 * if it's an element node, you know it has children, so call function again on all of those children (return false if the search isn't successful in the child nodes)
 * if it's a text node, use <code>indexOf</code> to determine if the search string is a substring of the __node's value__ (<code>nodeValue</code>)
 * remember that <code>indexOf</code> returns -1 if the substring is not found
+
+
+</code></pre>
 </section>
 
 <section markdown="block">
