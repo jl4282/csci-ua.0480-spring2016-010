@@ -116,14 +116,12 @@ Assuming that all of this markup is in the __body__, __how would I get__: &rarr;
 
 <pre><code class="html" data-trim contenteditable>
 &lt;body&gt;
+&lt;style&gt;#three {color:red;}&lt;/style&gt;
 &lt;div id="content"&gt;
-	&lt;p&gt;One&lt;/p&gt;
-	&lt;p class="cta"&gt;Two&lt;/p&gt;
-	&lt;p class="cta"&gt;Three&lt;/p&gt;
+    &lt;p&gt;One&lt;/p&gt;
+    &lt;p class="cta"&gt;Two&lt;/p&gt;
+    &lt;p class="cta" id="three"&gt;Three&lt;/p&gt;
 &lt;/div&gt;
-.
-.
-.
 &lt;/body&gt;
 </code></pre>
 </section>
@@ -309,10 +307,11 @@ __Using following code...__  &rarr;
 
 <pre><code class="html" data-trim contenteditable>
 &lt;body&gt;
+&lt;style&gt;#three {color:red;}&lt;/style&gt;
 &lt;div id="content"&gt;
-	&lt;p&gt;One&lt;/p&gt;
-	&lt;p class="cta"&gt;Two&lt;/p&gt;
-	&lt;p class="cta"&gt;Three&lt;/p&gt;
+    &lt;p&gt;One&lt;/p&gt;
+    &lt;p class="cta"&gt;Two&lt;/p&gt;
+    &lt;p class="cta" id="three"&gt;Three&lt;/p&gt;
 &lt;/div&gt;
 &lt;/body&gt;
 </code></pre>
@@ -369,10 +368,11 @@ content.replaceChild(paragraphs[2], paragraphs[1]);
 
 Back to our favorite fragment. __How do I remove every paragraph element from this div?__ &rarr;
 <pre><code data-trim contenteditable>
+&lt;style&gt;#three {color:red;}&lt;/style&gt;
 &lt;div id="content"&gt;
-	&lt;p&gt;One&lt;/p&gt;
-	&lt;p class="cta"&gt;Two&lt;/p&gt;
-	&lt;p class="cta"&gt;Three&lt;/p&gt;
+    &lt;p&gt;One&lt;/p&gt;
+    &lt;p class="cta"&gt;Two&lt;/p&gt;
+    &lt;p class="cta" id="three"&gt;Three&lt;/p&gt;
 &lt;/div&gt;
 </code></pre>
 <pre><code data-trim contenteditable>
@@ -426,7 +426,9 @@ while (div.firstChild) {
 }
 </code></pre>
 {:.fragment}
+
 </section>
+
 <section markdown="block">
 ## Aaand, a Tricky Way
 
@@ -482,10 +484,11 @@ There are other properties similar to <code>textContent</code>, such as <code>in
 
 __What do the following lines of code represent / do based on the markup below?__ &rarr;
 <pre><code data-trim contenteditable>
+&lt;style&gt;#three {color:red;}&lt;/style&gt;
 &lt;div id="content"&gt;
-	&lt;p&gt;One&lt;/p&gt;
-	&lt;p class="cta"&gt;Two&lt;/p&gt;
-	&lt;p class="cta"&gt;Three&lt;/p&gt;
+    &lt;p&gt;One&lt;/p&gt;
+    &lt;p class="cta"&gt;Two&lt;/p&gt;
+    &lt;p class="cta" id="three"&gt;Three&lt;/p&gt;
 &lt;/div&gt;
 </code></pre>
 
@@ -515,9 +518,9 @@ __Note... that they're called on the built-in <code>document</code> object, not 
 Replace each paragraph element with text that says "this was a paragraph".
 <pre><code data-trim contenteditable>
 &lt;div id="content"&gt;
-	&lt;p&gt;One&lt;/p&gt;
-	&lt;p class="cta"&gt;Two&lt;/p&gt;
-	&lt;p class="cta"&gt;Three&lt;/p&gt;
+    &lt;p&gt;One&lt;/p&gt;
+    &lt;p class="cta"&gt;Two&lt;/p&gt;
+    &lt;p class="cta" id="three"&gt;Three&lt;/p&gt;
 &lt;/div&gt;
 </code></pre>
 
@@ -565,7 +568,10 @@ It acts like this: <code>elt(type, [, child1, ..., child2);</code> &rarr;
 * an optional list of Elements follows
 * each element will be added as a child
 * if the element is just a string, create and add a text node
+* <code>elt('div', 'hi', elt('h2', 'hello'), elt('p', 'how are you?'))</code>
+* ... creates a div, with 'hi',  an h2, and a p nested within it
 
+<br>
 __How would we create this?__ &rarr;
 
 </section>

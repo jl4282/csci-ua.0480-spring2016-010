@@ -13,7 +13,7 @@ title: "Back to HTML Elements, Attributes"
 <section markdown="block">
 ## Element Attributes
 
-__What's an attribute again? What are some examples of attributs?__ &rarr;
+__What's an attribute again? What are some examples of attributes?__ &rarr;
 
 * it's additional information about the element
 * it's written as a name/value pair within an opening tag: <code>&lt;element attributeName="attributeValue"&gt;</code>
@@ -26,7 +26,7 @@ __What's an attribute again? What are some examples of attributs?__ &rarr;
 
 Most attributes can be accessed as properties on that particular element's object. The property name is usually just the camel-case name of the attribute.
 
-__Try writing a tiny script that takes all of the images on a page and changes the src of those images to [the look of disapproval](http://foureyes.github.io/csci-ua.0480-fall2015-001/resources/img/disapproval.png)__ &rarr;
+__Try writing a tiny script that takes all of the images on a page and changes the src of those images to [the look of disapproval](http://foureyes.github.io/csci-ua.0480-spring2016-010/resources/img/disapproval.png)__ &rarr;
 
 <pre><code data-trim contenteditable>
 var images = document.getElementsByTagName('img');
