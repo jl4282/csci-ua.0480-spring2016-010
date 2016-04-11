@@ -438,8 +438,8 @@ Add users to the site. Instead of showing all lists, when a user is logged in:
 
 #### Modify your existing code:
 
-* add a User schema; it should reference your list (see [example repository for user with images demo](https://github.com/nyu-csci-ua-0480-010-spring-2016/examples/blob/master/class16/user-image/db.js) - you'll need to be logged in to view)
-* integrate passport-local-mongoose (see [bare bones authentication demo](https://github.com/nyu-csci-ua-0480-010-spring-2016/examples/tree/master/class16/passport-demo))
+* add a User schema; it should reference your list (see [example repository for user with images demo](https://github.com/jversoza/ait-spring-16-examples/blob/master/class16/user-image/db.js) - you'll need to be logged in to view)
+* integrate passport-local-mongoose (see [bare bones authentication demo](https://github.com/jversoza/ait-spring-16-examples/tree/master/class16/passport-demo))
 
 
 </div>
