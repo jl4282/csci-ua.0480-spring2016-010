@@ -431,7 +431,7 @@ Add users to the site. Instead of showing all lists, when a user is logged in:
 
 #### Modify the following URLs
 
-* <code>/</code> ... no longer redirects to /lists, just displays links to login or register if user not logged in
+* <code>/</code> ... no longer redirects to /image-posts, just displays links to login or register if user not logged in
 * <code>/image-posts</code> ... displays a username after the image-post's title
 * when image-post is created, associate with user
 * adding and removing images can only be done by the user that created it
