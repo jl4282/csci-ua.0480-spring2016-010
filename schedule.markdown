@@ -266,10 +266,7 @@ MIDTERM
 * AJAX and Express Continued
 
 </td>
-{% comment %}
 {% include schedule/21.markdown %}
-{% endcomment %}
-<td></td><td></td><td></td>
 </tr>
 
 

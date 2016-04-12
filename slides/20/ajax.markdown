@@ -419,12 +419,14 @@ You can drop in all of you request code in the callback above.
 Let's try a little experiment:
 
 * instead of requesting hello.json
-* what if we tried or XMLHttpRequeset with the json that we used for the nba homework?
+* what if we tried requesting a page from cs.nyu.edu?
 
+{% comment %}
 <br>
 [http://foureyes.github.io/csci-ua.0480-fall2015-001/homework/02/2014-06-15-heat-spurs.json](http://foureyes.github.io/csci-ua.0480-fall2015-001/homework/02/2014-06-15-heat-spurs.json)
+{% endcomment %}
 
-__What do you think will happen? (Ignore the fact that the documents don't match at all; there's something else off)__ &rarr;
+__What do you think will happen? (Ignore the fact that the documents don't match at all, and we're not getting back json; there's something else off)__ &rarr;
 
 * totally not allowed!
 * the request will fail
