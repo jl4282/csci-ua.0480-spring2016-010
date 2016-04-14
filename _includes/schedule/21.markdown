@@ -21,7 +21,7 @@
 -->
 </td>
 	<td markdown="block">
-<!--
-* [](assignments/.html)
--->
+Due Thursday, April 21st
+
+* [Project 2 Milestone ](final-project.html#milestone2)
 </td>

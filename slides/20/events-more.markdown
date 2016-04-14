@@ -71,13 +71,11 @@ So... that means every DOM element has __addEventListener__, and you can use it 
 For example:
 
 <pre><code data-trim contenteditable>
-&#x3C;script&#x3E;
 var b = document.querySelector(&#x27;button&#x27;);
 b.addEventListener(&#x27;click&#x27;, sayHello);
 function sayHello(evt){
   console.log(&#x27;hello&#x27;);
 }
-&#x3C;/script&#x3E;
 </code></pre>
 </section>
 
@@ -106,7 +104,6 @@ __A few more details about the callback__ &rarr;
 	* <code>removeEventListener('eventName', nameOfCallback);</code>
 * also, within the function __this__ is set to the element the that event listener was added to
 * __let's see all of this in action__ &rarr;
-I
 
 </section>
 
@@ -116,13 +113,11 @@ I
 Using the same example.... __let's remove the event listener on click so that it only says hello on the first click... and does nothing afterwards. We'll also log out some event object properties__ &rarr;
 
 <pre><code data-trim contenteditable>
-&#x3C;script&#x3E;
 var b = document.querySelector(&#x27;button&#x27;);
 b.addEventListener(&#x27;click&#x27;, sayHello);
 function sayHello(evt){
   console.log(&#x27;hello&#x27;);
 }
-&#x3C;/script&#x3E;
 </code></pre>
 
 <pre><code data-trim contenteditable>
@@ -151,7 +146,8 @@ __Let's try nesting two elements (maybe a button in an article), add adding even
   &#x3C;h1&#x3E;About Events&#x3C;/h1&#x3E;
   &#x3C;button&#x3E;Click to Say Hello&#x3C;/button&#x3E;
 &#x3C;/article&#x3E;
-&#x3C;script&#x3E;
+
+// in js
 var a = document.querySelector(&#x27;article&#x27;);  
 var b = document.querySelector(&#x27;button&#x27;);
 a.addEventListener(&#x27;click&#x27;, function(evt) {
@@ -160,7 +156,6 @@ a.addEventListener(&#x27;click&#x27;, function(evt) {
 b.addEventListener(&#x27;click&#x27;, function(evt) {
   console.log(&#x27;button!&#x27;);
 });
-&#x3C;/script&#x3E;
 </code></pre>
 </section>
 
@@ -202,14 +197,13 @@ __Create a link... but add an event listener to stop the browser from going to t
 <pre><code data-trim contenteditable>
 &#x3C;a href=&#x22;http://nyu.edu&#x22;&#x3E;a link to nyu&#x3C;/a&#x3E;
 
-&#x3C;script&#x3E;
+// in js
 var a = document.querySelector(&#x27;a&#x27;);  
 
 a.addEventListener(&#x27;click&#x27;, function(evt) {
   console.log(&#x27;link clicked!&#x27;);  
   evt.preventDefault();
 });
-&#x3C;/script&#x3E;
 </code></pre>
 
 

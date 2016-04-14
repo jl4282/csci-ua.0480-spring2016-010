@@ -280,10 +280,7 @@ MIDTERM
 concat and min? grunt and/or gulp?
 {% endcomment %}
 </td>
-{% comment %}
 {% include schedule/22.markdown %}
-{% endcomment %}
-<td></td><td></td><td></td>
 </tr>
 
 

@@ -146,14 +146,28 @@ Choose at least __6 points__ worth of these following topics (research and imple
 <br>
 <br>
 
-### Date TBD - Milestone 2 - Prototype With Some Implemented Functionality
+### Date 4/21 - Milestone 2 - Prototype With Some Implemented Functionality (10 points total)
 
+1. (4 points) create at least 1 form that can add data to your database
+2. (3 points) have at least 1 page that reads data from your database
+3. (3 points) partially implement one of your research topics
+4. create a markdown file called <code>milestone02.md</code>
+    * specify the url that shows your form (for example, <code>http://localhost:3000/pizzas</code>)
+    * specify the url that shows a page reading data
+    * specify the url or directory for your research topic
+5. make sure that you have a <code>package.json</code> with all of your project's required dependencies so that numbers 1 through 3 will function
+6. __after pushing your code to github__:
+    * clone your project in a different directory
+    * run <code>npm install</code> and <code>nodemon bin/www</code> 
+    * and verify that your project works
+    * (if your project is not _runnable_, you will not receive credit for this milestone)
+
+{% comment %} 
 * 1 or more forms and their corresponding route handlers
 * Demonstrate that at least 2 route handlers can read and write from MongoDB
 * Proof of concepts for some of your research topics (for example, if you wanted to use sass, I'd expect that you've made some progress integrating it into your project)
 * Prep for deploying your project
     * Directions to be added for deploy prep
-{% comment %} 
     To prep for deploying your app so that it's accessible online... retrieve your password for the cs department's server for undergraduate students (i6)  and ensure that you can log in:
 	1. Get the new password that you'll use to log in to i6 by going to https://cims.nyu.edu/webapps/password ...and entering your netid and password
 	2. Use the i6 password that you received to log in to a remote server using the commandline tool, ssh (substituting your lowercase net id for your_net_id): <code>ssh your_net_id@i6.cims.nyu.edu</code>
