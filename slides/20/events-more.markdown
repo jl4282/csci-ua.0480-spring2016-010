@@ -52,7 +52,9 @@ Hey... __where does this method come from... what kind of object can you call it
 * document.getElementsByTagName('div')[0].addEventListener
 
 <br>
-{:.fragment} Remember that __Node__ objects have a prototype of __EventTarget__... and all elements are just nodes in the DOM
+
+Remember that __Node__ objects have a prototype of __EventTarget__... and all elements are just nodes in the DOM
+{:.fragment} 
 
 <pre><code data-trim contenteditable>
 var ele = document.getElementsByTagName('div')[0];
