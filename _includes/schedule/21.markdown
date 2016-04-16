@@ -24,4 +24,5 @@
 Due Thursday, April 21st
 
 * [Project 2 Milestone ](final-project.html#milestone2)
+* [Homework #6](homework/07.html)
 </td>
