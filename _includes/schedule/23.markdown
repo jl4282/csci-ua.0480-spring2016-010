@@ -4,6 +4,8 @@
 * (from forever ago) [CSS](slides/19/css.html)
 {% endcomment %}
 
+* Homework Questions
+* Milestone #2 Questions (read the comments, please)
 * [Ajax Part 2](slides/21/ajax-express.html)
     * [review](slides/21/ajax-express.html#/8) and rebuild XMLHttpRequest / hello
     * deal with errors
