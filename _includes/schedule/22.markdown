@@ -3,8 +3,7 @@
 * [About Class #22](slides/22/meta.html)
 {% endcomment %}
 
-* (from last class) [Ajax Part 2](slides/21/ajax-express.html)
-* [Promises](slides/22/promises.html)
+* [Ajax Part 1](slides/20/ajax.html)
 
 {% comment %}
 * (from forever ago) [CSS](slides/19/css.html)

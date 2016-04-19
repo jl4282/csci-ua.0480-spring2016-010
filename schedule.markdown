@@ -252,8 +252,7 @@ MIDTERM
 <!-- ------------ --><a name="20"></a>
 <tr><td>20</td><td><strong>Apr 7</strong><br>Thu</td>
 <td markdown="block">
-* XMLHttpRequest
-* AJAX and Express
+* CSS Refresher
 
 </td>
 {% include schedule/20.markdown %}
@@ -263,7 +262,8 @@ MIDTERM
 <!-- ------------ --><a name="21"></a>
 <tr><td>21</td><td><strong>Apr 12</strong><br>Tue</td>
 <td markdown="block">
-* AJAX and Express Continued
+
+* Events Revisited
 
 </td>
 {% include schedule/21.markdown %}
@@ -273,9 +273,7 @@ MIDTERM
 <!-- ------------ --><a name="22"></a>
 <tr><td>22</td><td><strong>Apr 14</strong><br>Thu</td>
 <td markdown="block">
-* Promises
-* CSS Refresher
-* Build Tools (maybe)
+* XMLHttpRequest
 {% comment %}
 concat and min? grunt and/or gulp?
 {% endcomment %}
@@ -287,40 +285,34 @@ concat and min? grunt and/or gulp?
 <!-- ------------ --><a name="23"></a>
 <tr><td>23</td><td><strong>Apr 19</strong><br>Tue</td>
 <td markdown="block">
-* FlexBox
-* Deployment
-* Frontend JavaScript Framework Intro (React)
+* AJAX and Express Continued
+* Promises
 {% comment %}
 remove css refresher 
 flexbox, etc from old 24
 show react basics
 {% endcomment %}
 </td>
-{% comment %}
 {% include schedule/23.markdown %}
-{% endcomment %}
-<td></td><td></td><td></td>
 </tr>
 
 
 <!-- ------------ --><a name="24"></a>
 <tr><td>24</td><td><strong>Apr 21</strong><br>Thu</td>
 <td markdown="block">
-* Frontend JavaScript Framework Continued (React)
-
+* Socket.IO
+* Deployment
 {% comment %} consolidate React stuff here maybe from 26 and 27, including build tools {% endcomment %}
 </td>
-{% comment %}
 {% include schedule/24.markdown %}
-{% endcomment %}
-<td></td><td></td><td></td>
 </tr>
 
 
 <!-- ------------ --><a name="25"></a>
 <tr><td>25</td><td><strong>Apr 26</strong><br>Tue</td>
 <td markdown="block">
-* Socket.IO
+* Build Tools (maybe)
+* FlexBox
 </td>
 {% comment %}
 {% include schedule/25.markdown %}
@@ -333,7 +325,8 @@ show react basics
 <a name="26"></a>
 <tr><td>26</td><td><strong>Apr 28</strong><br>Thu</td>
 <td markdown="block">
-* TBD
+* Frontend JavaScript Framework Intro (React)
+* Frontend JavaScript Framework Continued (React)
 </td>
 {% comment %}
 {% include schedule/26.markdown %}

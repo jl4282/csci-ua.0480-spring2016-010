@@ -1,7 +1,6 @@
 	<td markdown="block">
-
-* [Ajax Part 2](slides/21/ajax-express.html)
-* [CSS](slides/19/css.html)
+* [Selectors, JS and CSS](slides/19/js-css.html)
+* [More About Events](slides/20/events-more.html)
 
 	{% comment %}
 * [Flexbox, Grids](slides/20/flexbox.html)
