@@ -146,7 +146,7 @@ Choose at least __6 points__ worth of these following topics (research and imple
 <br>
 <br>
 
-### Date 4/21 - Milestone 2 - Prototype With Some Implemented Functionality (10 points total)
+### Date 4/22 - Milestone 2 - Prototype With Some Implemented Functionality (10 points total)
 
 1. (4 points) create at least 1 form that can add data to your database
 2. (3 points) have at least 1 page that reads data from your database

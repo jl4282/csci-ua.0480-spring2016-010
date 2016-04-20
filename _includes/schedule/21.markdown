@@ -20,7 +20,7 @@
 -->
 </td>
 	<td markdown="block">
-Due Thursday, April 21st
+Due Friday, April 22nd
 
 * [Project 2 Milestone ](final-project.html#milestone2)
 * [Homework #7](homework/07.html)
