@@ -193,14 +193,19 @@ On the client:
 * your client-side [Socket object](http://socket.io/docs/client-api/#socket) let's you communicate with the server
 </section>
 <section markdown="block">
-## Some Server Side Methods and Properties
+## (Some) Server Functions
 
 * __<code>io.on('event name', callback</code>__
 	* register a callback to handle a server event
 	* start off by defining what to do on the 'connect' event
-* __<code>io.emit('event name', 'message')</code>__
-	* send a message to all connected clients (including the one that is on the current socket!)
+* __<code>io.sockets.emit('event name', 'message')</code>__
+	* send a message to all connected clients (including the one that is on the _current_ socket!)
 	* the message can be anything supported by JSON (strings, objects, etc. ... but not functions)
+</section>
+
+<section markdown="block">
+## (More) Server Functions (and Properties)
+
 * __<code>socket.on('event name', callback)</code>__
 	* define a call back to handle socket event
 	* usually custom event names (events that you create)
@@ -210,7 +215,7 @@ On the client:
 </section>
 
 <section markdown="block">
-## Some Client Side Methods and Functions
+## (Some) Client Functions
 
 * <code>io</code> - a function that gives back a socket
 * <code>socket.on('event name', callback)</code> - listen for an event name, trigger the callback
