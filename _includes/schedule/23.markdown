@@ -30,7 +30,7 @@
 -->
 </td>
 	<td markdown="block">
-Due Friday, April 29nd
+Due Friday, April 29th
 
 * [Homework #8](homework/08.html)
 </td>
