@@ -314,10 +314,7 @@ show react basics
 * Build Tools (maybe)
 * FlexBox
 </td>
-{% comment %}
 {% include schedule/25.markdown %}
-{% endcomment %}
-<td></td><td></td><td></td>
 </tr>
 
 
@@ -328,10 +325,7 @@ show react basics
 * Frontend JavaScript Framework Intro (React)
 * Frontend JavaScript Framework Continued (React)
 </td>
-{% comment %}
 {% include schedule/26.markdown %}
-{% endcomment %}
-<td></td><td></td><td></td>
 </tr>
 
 

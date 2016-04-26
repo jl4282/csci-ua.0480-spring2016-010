@@ -1,7 +1,5 @@
 	<td markdown="block">
 {% comment %}
-* [Flexbox](slides/24/flexbox.html)
-* [React Basics](slides/24/react.html)
 {% endcomment %}
 * [Socket IO Intro](slides/24/socketio.html)
 </td>

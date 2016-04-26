@@ -1,6 +1,7 @@
 	<td markdown="block">
+* [React Basics](slides/24/react.html)
 * [React revisited](slides/26/react-webpack.html)
-* movie homework done with AJAX
+* [Flexbox](slides/24/flexbox.html)
 </td>
 	<td markdown="block">
 <!--
