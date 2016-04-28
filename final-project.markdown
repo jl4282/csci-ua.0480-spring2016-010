@@ -182,26 +182,30 @@ Choose at least __6 points__ worth of these following topics (research and imple
 
 <a name="milestone3">
 
-### Date TBD - Milestone 3 - Refined Prototype
+### 5/3 - Milestone 3 - Refined Prototype and Attempt to Deploy
 
-See link in assignment description in NYU Classes
+1. attempt to deploy your code to i6 by following [these instructions](homework/deploy.html)
+2. use [this form to send me the urls](https://docs.google.com/a/nyu.edu/forms/d/112J7_jnQFozXiLUtHdRIxcCFnEomEMdCYbnNLX5AyrQ/viewform) of: 
+    * two working forms in your __deployed__ application 
+        * they should allow data to be modified or deleted
+        * the results of these forms should be apparent/viewable
+    * show progress on at least 2 of your research topics; the url that shows you've implemented what you've researched can be:
+        * a page on your site that's deployed to i6
+        * a link to the github repository / line no
+3. I can augment my office hours on Monday if you need help with deployment
+    * (really, deployment will be the bulk of your _work_ ... if you completed the previous milestone, then there will be little work for you to do to complete #2)
+    * send me an email if you're having issues with deploying
 
 <br>
 <br>
 <br>
 
-
-<a name="milestone4">
-
-### Date TBD - Milestone 4 - Attempt to Deploy Your Project 
-
-<br>
-<br>
-<br>
 
 <a name="milestone5">
 
-### __5/6__ - Final Project Complete - Code is  _Deployed_ 
+### __5/7__ - Final Project Complete - Code is  _Deployed_ 
+* __(extended from Fri, 5/6 to Sat, 5/7)__ to allow some time over the weekend to finish up project
+* late submissions accepted within __48 (Mon, 5/9) hours with 10% penalty__ applied to this last milestone (regardless of previous lates)
 
 <br>
 <br>

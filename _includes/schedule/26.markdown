@@ -10,7 +10,9 @@
 -->
 </td>
 	<td markdown="block">
-<!--
-* [](assignments/.html)
--->
+
+Milestone #3, Due Tuesday, 5/3
+
+* [Final-project#milestone3](final-project.html#milestone3)
+
 </td>
