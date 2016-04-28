@@ -13,6 +13,6 @@
 
 Milestone #3, Due Tuesday, 5/3
 
-* [Final-project#milestone3](final-project.html#milestone3)
+* [Final Project Milestone #3 Requirements](final-project.html#milestone3)
 
 </td>
