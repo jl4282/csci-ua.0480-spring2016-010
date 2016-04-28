@@ -26,7 +26,9 @@ pre {
 <div class="panel panel-default">
 	<div class="panel-heading">Final Project</div>
 	<div class="panel-body" markdown="block">
-# __Final Project, Due Friday, May 6th at 11pm__
+# __Final Project, Due Saturday, May 7th at 11pm__
+
+(extended from May 6th)
 
 ## Overview 
 
