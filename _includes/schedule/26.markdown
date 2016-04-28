@@ -1,6 +1,6 @@
 	<td markdown="block">
 * [React Basics](slides/24/react.html)
-* [React revisited](slides/26/react-webpack.html)
+* [React Revisited](slides/26/react-webpack.html)
 * [React and Express / Using Webpack](slides/27/react-webpack-continued.html)
 * [Flexbox](slides/24/flexbox.html)
 </td>
@@ -11,6 +11,9 @@
 -->
 </td>
 	<td markdown="block">
+In-class Activity
+
+* [React Clicker](https://docs.google.com/a/nyu.edu/forms/d/1bDbEsO6ZTanAe1F0BIVzYQg4ECJsEBuLeXQztmwPvNw/viewform)
 
 Milestone #3, Due Tuesday, 5/3
 
