@@ -261,9 +261,9 @@ React.render(
 <section markdown="block">
 ## State
 
-__state__ is internal data controlled by the component (contrast this with __props__, which are controlled by whatever renders the component.
+__state__ is internal data controlled by the component (contrast this with __props__, which are controlled by whatever renders the component).
 
-To initialize state properties when your component is create, __define a <code>getInitialState</code> within your component definition... and return the desired state properties as property value pairs within an object.__ &rarr;
+To initialize state properties when your component is created, __define a <code>getInitialState</code> within your component definition... and return the desired state properties as property value pairs within an object.__ &rarr;
 
 <pre><code data-trim contenteditable>
 { // within a component definition
@@ -281,6 +281,14 @@ __To read state....__ &rarr;
 
 <pre><code data-trim contenteditable>
 this.state.propertyName
+</code></pre>
+{:.fragment}
+
+To set state:
+{:.fragment}
+
+<pre><code data-trim contenteditable>
+thiss.setState({stateName: stateValue});
 </code></pre>
 {:.fragment}
 </section>
@@ -378,5 +386,18 @@ Within your component definition:
     )
   }
 </code></pre>
+</section>
+
+<section markdown="block">
+## What About These Components?
+
+__Now let's try adding 3 counters to our render...__ &rarr;
+<pre><code data-trim contenteditable>
+React.render(
+  &lt;div&gt;&lt;Counter /&gt;&lt;Counter /&gt;&lt;Counter /&gt;&lt;/div&gt;,
+    document.body
+);
+</code></pre>
+
 </section>
 

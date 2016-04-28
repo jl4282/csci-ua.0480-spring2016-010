@@ -118,7 +118,7 @@ It looks like there's an unquoted string of markup in the JavaScript!
 
 JSX is an extension to JavaScript syntax that allows _XML-like_ syntax without all of the fussy quoting!
 
-* JSX is not a templating languate
+* JSX is not a templating language
 * you can think of it as a preprocessor
 	* it takes in JavaScript with JSX syntax
 	* and _compiles_ JSX to plain vanilla JavaScript 
@@ -187,6 +187,7 @@ To make a component, use <code>React.createClass</code>, which takes an object a
 * note that a component variable must start with uppercase
 * once you have a component, you can pass it to render using JSX, with the variable name as the tag name
 * you can access attributes defined in JSX via __this.props__ in your component
+* use curly braces to add the result of a javascript expression into JSX
 </section>
 
 <section markdown="block">
