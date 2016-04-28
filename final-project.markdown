@@ -179,6 +179,7 @@ Choose at least __6 points__ worth of these following topics (research and imple
 <br>
 <br>
 <br>
+<br>
 
 <a name="milestone3">
 
@@ -196,6 +197,7 @@ Choose at least __6 points__ worth of these following topics (research and imple
     * (really, deployment will be the bulk of your _work_ ... if you completed the previous milestone, then there will be little work for you to do to complete #2)
     * send me an email if you're having issues with deploying
 
+<br>
 <br>
 <br>
 <br>
