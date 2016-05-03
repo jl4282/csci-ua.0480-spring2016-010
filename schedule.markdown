@@ -333,10 +333,7 @@ show react basics
 <td markdown="block">
 * Frontend JavaScript Framework Continued (React)
 </td>
-{% comment %}
 {% include schedule/27.markdown %}
-{% endcomment %}
-<td></td><td></td><td></td>
 </tr>
 
 <!-- ------------ --><a name="28"></a>

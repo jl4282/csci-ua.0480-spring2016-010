@@ -1,7 +1,6 @@
 	<td markdown="block">
 
 * [React and Express / Using Webpack](slides/27/react-webpack-continued.html)
-* [Final Project](slides/27/meta.html)
 </td>
 	<td markdown="block">
 <!--
