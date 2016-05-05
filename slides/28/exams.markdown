@@ -45,9 +45,9 @@ title: "About the Final Exam"
 <section markdown="block">
 ## About the Exam 
 
-* Tuesday, December 22nd, 2015 
-* 8:00AM - 9:50AM (!?)
-* WWH 101
+* Thursday, May 12th
+* 10:00AM - 11:50AM 
+* This room
 
 </section>
 
@@ -60,8 +60,8 @@ title: "About the Final Exam"
 		* Example: When are CORS (Cross Origin Resource Sharing) headers necessary?
 	* Using APIs to accomplish some task
 		* Example: Using the DOM API and XMLHttpRequest, prototype a simple chat app
-* __Will be very lenient on syntax__ as long as it reasonably resembles the actual code
-* short reference for DOM API, socket.io, React, Flexbox, etc. (names of methods, properties only)
+* __Will be lenient on syntax__ as long as it reasonably resembles the actual code
+* short reference for DOM API, socket.io, React, etc. (names of methods, properties only)
 
 </section>
 <section markdown="block">
@@ -110,17 +110,15 @@ title: "About the Final Exam"
 
 Details 
 
-* \* Validation - won't have to know from scratch (conceptually, fill-in-the-blank)
-* \* HTML Forms - not necessary to know every element
-* \* Deployment - focus on debugging, why each part is necessary
-* \* Webpack / Babel - concepts only
+* Deployment - focus on debugging, why each part is necessary
+* Webpack / Babel - concepts only
 
 <br>
 
 Not on Exam
 
-* Implementation of higher order functions (though feel free to use them)
 * The http module
-* From scratch Express application (though __definitelly__ know the layout)
+* Flexbox
+* Promises
 
 </section>
