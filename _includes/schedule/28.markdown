@@ -11,7 +11,9 @@
 -->
 </td>
 	<td markdown="block">
-<!--
-* [](assignments/.html)
--->
+
+Due Sunday May 8th
+
+* [final project requirements](http://foureyes.github.io/csci-ua.0480-spring2016-010/final-project.html)
+* [grading criteria form](https://docs.google.com/a/nyu.edu/forms/d/1uOc7g28_3QrB6WoKBwVxo7pHKDos6OcUrJORWlYskCw/viewform)
 </td>

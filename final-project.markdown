@@ -26,7 +26,8 @@ pre {
 <div class="panel panel-default">
 	<div class="panel-heading">Final Project</div>
 	<div class="panel-body" markdown="block">
-# __Final Project, Due Saturday, May 7th at 11pm__
+
+# __Final Project, Due Sun, May 8th at 11pm__
 
 (extended from May 6th)
 
@@ -207,9 +208,12 @@ Choose at least __6 points__ worth of these following topics (research and imple
 
 <a name="milestone5">
 
-### __5/7__ - Final Project Complete - Code is  _Deployed_ 
-* __(extended from Fri, 5/6 to Sat, 5/7)__ to allow some time over the weekend to finish up project
-* late submissions accepted within __48 (Mon, 5/9) hours with 10% penalty__ applied to this last milestone (regardless of previous lates)
+### __5/8__ - Final Project Complete - Code is  _Deployed_ 
+
+* __(extended from Fri, 5/6 to Sun, 5/8)__ to allow some time over the weekend to finish up project
+* late submissions accepted within __24 (Mon, 5/9) hours with 10% penalty__ applied to this last milestone (regardless of previous lates)
+* day after final exam submissions accepted with significant penalty (25%) upon email request
+* after that, no submissions will be accepted
 
 <br>
 <br>
